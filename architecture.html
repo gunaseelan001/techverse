@@ -16,11 +16,12 @@
   <link rel="icon" type="image/svg+xml" href="assets/images/Indian_Navy_Insignia.svg">
   <style>
     .arch-diagram-card {
-      background: rgba(3, 10, 22, 0.85);
+      background: #ffffff;
       border: 1px solid var(--navy-card-border);
       border-radius: 12px;
       padding: 2rem;
       margin-bottom: 3rem;
+      box-shadow: 0 4px 20px rgba(15, 23, 42, 0.05);
     }
     .topology-flow {
       display: grid;
@@ -30,8 +31,8 @@
       position: relative;
     }
     .topo-tier {
-      background: rgba(6, 18, 36, 0.75);
-      border: 1px solid rgba(0, 229, 255, 0.25);
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
       border-radius: 8px;
       padding: 1.25rem;
       text-align: center;
@@ -39,6 +40,7 @@
     }
     .topo-tier.hardened {
       border-color: var(--emerald-success);
+      border-top: 3px solid var(--emerald-success);
     }
     .topo-icon {
       font-size: 2.2rem;
@@ -55,6 +57,7 @@
       font-size: 0.72rem;
       color: var(--cyan-primary);
       margin-top: 4px;
+      font-weight: 600;
     }
     .topo-desc {
       font-size: 0.8rem;
@@ -63,8 +66,9 @@
       line-height: 1.4;
     }
     .attack-sim-console {
-      background: #01060f;
-      border: 1px solid rgba(255, 61, 113, 0.3);
+      background: #0f172a;
+      border: 1px solid #334155;
+      color: #e2e8f0;
       border-radius: 8px;
       padding: 1.25rem;
       margin-top: 1rem;
@@ -81,13 +85,6 @@
   </style>
 </head>
 <body>
-
-  <!-- Top Military Classification Bar -->
-  <div class="classification-bar">
-    <div class="tag">RESTRICTED // TECHNICAL WHITE-PAPER</div>
-    <div>AIR-GAPPED SYSTEM TOPOLOGY, VAPT COMPLIANCE &amp; HIGH CONCURRENCY</div>
-    <div class="tag">CERT-IN DEFENCE AUDITED</div>
-  </div>
 
   <!-- Naval Navigation Header -->
   <header class="navy-navbar">
@@ -203,28 +200,28 @@
       </div>
 
       <!-- Interactive Attack Simulation Buttons -->
-      <div style="background: rgba(4, 15, 30, 0.8); border: 1px solid rgba(0, 229, 255, 0.25); border-radius: 8px; padding: 1.5rem; margin-bottom: 1.5rem;">
-        <div class="mono text-cyan" style="font-size: 0.8rem; margin-bottom: 0.75rem;">
+      <div style="background: #ffffff; border: 1px solid var(--navy-card-border); box-shadow: 0 4px 16px rgba(15, 23, 42, 0.05); border-radius: 8px; padding: 1.5rem; margin-bottom: 1.5rem;">
+        <div class="mono text-cyan" style="font-size: 0.8rem; margin-bottom: 0.75rem; font-weight: 700;">
           SIMULATE PENETRATION TEST ATTACK VECTORS:
         </div>
         <div style="display: flex; flex-wrap: wrap; gap: 10px;">
-          <button id="simSqlAttackBtn" class="btn-sm-action" style="background: rgba(255, 61, 113, 0.15); border-color: #ff3d71; color: #ff3d71; padding: 8px 14px;">
+          <button id="simSqlAttackBtn" class="btn-sm-action" style="background: #fee2e2; border-color: #fca5a5; color: #b91c1c; padding: 8px 14px;">
             Simulate SQL Injection Attempt
           </button>
-          <button id="simPrivilegeBtn" class="btn-sm-action" style="background: rgba(255, 171, 0, 0.15); border-color: #ffab00; color: #ffab00; padding: 8px 14px;">
+          <button id="simPrivilegeBtn" class="btn-sm-action" style="background: #fef3c7; border-color: #fde68a; color: #b45309; padding: 8px 14px;">
             Simulate Inspector Self-Approval Escalation
           </button>
-          <button id="simTamperBtn" class="btn-sm-action" style="background: rgba(0, 229, 255, 0.15); border-color: #00e5ff; color: #00e5ff; padding: 8px 14px;">
+          <button id="simTamperBtn" class="btn-sm-action" style="background: #e0f2fe; border-color: #bae6fd; color: #0284c7; padding: 8px 14px;">
             Simulate Corrupted Binary Package Push
           </button>
-          <button id="simCableSnipBtn" class="btn-sm-action" style="background: rgba(0, 230, 118, 0.15); border-color: #00e676; color: #00e676; padding: 8px 14px;">
+          <button id="simCableSnipBtn" class="btn-sm-action" style="background: #dcfce7; border-color: #86efac; color: #15803d; padding: 8px 14px;">
             Simulate Docking Disconnect During Sync
           </button>
         </div>
 
         <!-- Attack Log Terminal -->
         <div id="vaptSimTerminal" class="attack-sim-console">
-          <div style="color: var(--emerald-success);">[VAPT-MONITOR] Armed and listening on all interfaces. Zero vulnerabilities active.</div>
+          <div style="color: #4ade80;">[VAPT-MONITOR] Armed and listening on all interfaces. Zero vulnerabilities active.</div>
         </div>
       </div>
 

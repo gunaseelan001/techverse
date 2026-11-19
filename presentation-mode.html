@@ -70,7 +70,7 @@
 
     .slide-subtitle {
       font-size: 1.25rem;
-      color: #bed2ea;
+      color: #334155;
       margin-bottom: 2rem;
       max-width: 900px;
       line-height: 1.6;
@@ -84,11 +84,12 @@
     }
 
     .slide-feature-box {
-      background: rgba(4, 15, 30, 0.7);
-      border: 1px solid rgba(0, 229, 255, 0.2);
+      background: #ffffff;
+      border: 1px solid var(--navy-card-border);
       border-radius: 8px;
       padding: 1.5rem;
       margin-bottom: 1rem;
+      box-shadow: 0 4px 16px rgba(15, 23, 42, 0.05);
     }
 
     .slide-feature-title {
@@ -103,37 +104,38 @@
 
     .slide-feature-desc {
       font-size: 0.9rem;
-      color: var(--ice-blue);
+      color: #475569;
       line-height: 1.5;
     }
 
     .presenter-notes {
       display: none;
-      background: rgba(229, 169, 60, 0.12);
-      border-left: 3px solid var(--gold-primary);
+      background: #fef3c7;
+      border-left: 3px solid #d97706;
       padding: 10px 16px;
       border-radius: 4px;
       font-family: var(--font-mono);
       font-size: 0.8rem;
-      color: #ffe082;
+      color: #92400e;
       margin-top: 1rem;
     }
 
     /* Presentation Bottom Controls */
     .presentation-controls-bar {
-      background: #02060e;
-      border-top: 1px solid rgba(0, 229, 255, 0.2);
+      background: #ffffff;
+      border-top: 1px solid var(--navy-card-border);
       padding: 12px 2rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
       z-index: 100;
+      box-shadow: 0 -2px 10px rgba(15, 23, 42, 0.04);
     }
 
     .progress-bar-container {
       flex: 1;
       height: 4px;
-      background: rgba(255, 255, 255, 0.1);
+      background: #e2e8f0;
       margin: 0 2rem;
       border-radius: 2px;
       overflow: hidden;
@@ -154,13 +156,6 @@
   </style>
 </head>
 <body>
-
-  <!-- Top Military Classification Bar -->
-  <div class="classification-bar">
-    <div class="tag">RESTRICTED // TECHNICAL EXHIBITION KEYNOTE</div>
-    <div>AIIMS-SARATHI: DEFENCE ARMAMENT LIFECYCLE MANAGEMENT SYSTEM</div>
-    <div class="tag">PRESS [F] FULLSCREEN // [N] NOTES</div>
-  </div>
 
   <!-- Header -->
   <header class="navy-navbar" style="height: 60px;">
@@ -247,14 +242,14 @@
           </div>
         </div>
 
-        <div style="background: rgba(4, 15, 30, 0.85); border: 1px solid rgba(0, 229, 255, 0.25); border-radius: 8px; padding: 2rem; text-align: center;">
+        <div style="background: #ffffff; border: 1px solid var(--navy-card-border); box-shadow: 0 4px 18px rgba(15, 23, 42, 0.05); border-radius: 8px; padding: 2rem; text-align: center;">
           <div style="font-family: var(--font-display); font-size: 4rem; font-weight: 800; color: var(--gold-primary); line-height: 1;">
             5,24,000+
           </div>
-          <div class="mono" style="font-size: 0.9rem; color: var(--text-bright); margin-top: 8px;">
+          <div class="mono" style="font-size: 0.9rem; color: var(--text-bright); margin-top: 8px; font-weight: 700;">
             ARMAMENT COMPONENTS MONITORED IN REAL TIME
           </div>
-          <div class="mono" style="font-size: 0.8rem; color: var(--emerald-success); margin-top: 12px;">
+          <div class="mono" style="font-size: 0.8rem; color: var(--emerald-success); margin-top: 12px; font-weight: 600;">
             ● 100% Zero Data Loss Across Naval Air-Gaps
           </div>
         </div>
@@ -327,13 +322,13 @@
           </div>
         </div>
 
-        <div style="background: rgba(3, 10, 22, 0.8); border: 1px solid rgba(0, 229, 255, 0.25); border-radius: 8px; padding: 1.5rem;">
-          <div class="mono text-gold" style="font-size: 0.75rem;">LIVE CHECK SHEET VALIDATOR EXAMPLE</div>
-          <div style="font-family: var(--font-mono); font-size: 0.82rem; margin-top: 10px; line-height: 1.8;">
+        <div style="background: #ffffff; border: 1px solid var(--navy-card-border); box-shadow: 0 4px 18px rgba(15, 23, 42, 0.05); border-radius: 8px; padding: 1.5rem;">
+          <div class="mono text-gold" style="font-size: 0.75rem; font-weight: 700;">LIVE CHECK SHEET VALIDATOR EXAMPLE</div>
+          <div style="font-family: var(--font-mono); font-size: 0.82rem; margin-top: 10px; line-height: 1.8; color: #334155;">
             <div>PARAMETER: Torpedo Tube Bore Dia</div>
             <div>NOMINAL: 533.40 mm [TOL: ±0.05 mm]</div>
-            <div>INPUT: 533.42 mm ➔ <span class="text-emerald">STATUS: WITHIN TOLERANCE</span></div>
-            <div>INPUT: 533.78 mm ➔ <span style="color: #ff3d71;">STATUS: CRITICAL ANOMALY (LOCKED)</span></div>
+            <div>INPUT: 533.42 mm ➔ <span class="text-emerald" style="font-weight: 700;">STATUS: WITHIN TOLERANCE</span></div>
+            <div>INPUT: 533.78 mm ➔ <span style="color: #dc2626; font-weight: 700;">STATUS: CRITICAL ANOMALY (LOCKED)</span></div>
           </div>
         </div>
       </div>
@@ -367,9 +362,9 @@
           </div>
         </div>
 
-        <div style="background: rgba(4, 15, 30, 0.9); border: 1px solid var(--emerald-success); border-radius: 8px; padding: 2rem; text-align: center;">
-          <div style="font-size: 3rem; color: var(--emerald-success);">100%</div>
-          <div class="mono" style="font-size: 1.1rem; color: var(--text-bright); margin-top: 6px;">
+        <div style="background: #ffffff; border: 1px solid var(--emerald-success); box-shadow: 0 4px 18px rgba(15, 23, 42, 0.05); border-radius: 8px; padding: 2rem; text-align: center;">
+          <div style="font-size: 3rem; color: var(--emerald-success); font-weight: 800;">100%</div>
+          <div class="mono" style="font-size: 1.1rem; color: var(--text-bright); margin-top: 6px; font-weight: 700;">
             VAPT DEFENCE AUDIT CLEARANCE
           </div>
           <div class="mono" style="font-size: 0.78rem; color: var(--text-muted); margin-top: 10px;">
@@ -496,9 +491,9 @@
       </p>
 
       <div class="slide-content-grid">
-        <div style="background: rgba(4, 15, 30, 0.85); border: 1px solid var(--gold-primary); border-radius: 8px; padding: 2rem;">
+        <div style="background: #ffffff; border: 1px solid var(--gold-primary); box-shadow: 0 4px 18px rgba(15, 23, 42, 0.05); border-radius: 8px; padding: 2rem;">
           <h3 style="color: var(--gold-primary); margin-bottom: 0.5rem;">Demonstration Highlights:</h3>
-          <ul style="list-style: none; line-height: 2; font-size: 0.95rem; color: #bed2ea;">
+          <ul style="list-style: none; line-height: 2; font-size: 0.95rem; color: #334155;">
             <li>✓ Lakhs of armament records queried in under 15ms</li>
             <li>✓ Zero wireless risk inside hazardous magazine bunkers</li>
             <li>✓ Complete elimination of human paper-entry errors</li>

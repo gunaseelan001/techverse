@@ -22,13 +22,14 @@
       margin-top: 1.5rem;
     }
     .dial-card {
-      background: rgba(3, 10, 22, 0.7);
-      border: 1px solid rgba(0, 229, 255, 0.2);
+      background: #ffffff;
+      border: 1px solid var(--navy-card-border);
       border-radius: 8px;
       padding: 1.25rem;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      box-shadow: 0 4px 16px rgba(15, 23, 42, 0.05);
     }
     .dial-header {
       font-family: var(--font-mono);
@@ -37,6 +38,7 @@
       text-transform: uppercase;
       display: flex;
       justify-content: space-between;
+      font-weight: 600;
     }
     .dial-value {
       font-size: 2rem;
@@ -47,15 +49,16 @@
     }
     .dial-footer {
       font-size: 0.72rem;
-      color: var(--ice-blue);
+      color: #64748b;
       font-family: var(--font-mono);
     }
     .iot-sensor-diagram {
-      background: rgba(4, 15, 30, 0.85);
-      border: 1px solid rgba(0, 229, 255, 0.25);
+      background: #ffffff;
+      border: 1px solid var(--navy-card-border);
       border-radius: 10px;
       padding: 2rem;
       margin: 2.5rem 0;
+      box-shadow: 0 4px 16px rgba(15, 23, 42, 0.05);
     }
     @media (max-width: 900px) {
       .twin-telemetry-grid {
@@ -65,13 +68,6 @@
   </style>
 </head>
 <body>
-
-  <!-- Top Military Classification Bar -->
-  <div class="classification-bar">
-    <div class="tag">RESTRICTED // R&amp;D ROADMAP</div>
-    <div>FUTURE IMPROVISATIONS: DIGITAL TWIN, REAL-TIME IOT &amp; AI SENTENCING</div>
-    <div class="tag">DEFENCE HORIZON 2026-2030</div>
-  </div>
 
   <!-- Naval Navigation Header -->
   <header class="navy-navbar">
@@ -161,10 +157,10 @@
           </div>
 
           <!-- Component Details Card -->
-          <div style="background: rgba(4, 15, 30, 0.75); border: 1px solid rgba(0, 229, 255, 0.2); border-radius: 8px; padding: 1.25rem; margin-top: 1rem;">
-            <div class="mono text-gold" style="font-size: 0.75rem; text-transform: uppercase;">Selected Sub-Assembly Inspector:</div>
+          <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 1.25rem; margin-top: 1rem;">
+            <div class="mono text-gold" style="font-size: 0.75rem; text-transform: uppercase; font-weight: 700;">Selected Sub-Assembly Inspector:</div>
             <h3 id="twinCompName" style="color: var(--text-bright); margin: 4px 0 8px; font-size: 1.2rem;">Complete Naval Armament Assembly</h3>
-            <p id="twinCompDesc" style="color: #bed2ea; font-size: 0.88rem; margin: 0; line-height: 1.5;">
+            <p id="twinCompDesc" style="color: #475569; font-size: 0.88rem; margin: 0; line-height: 1.5;">
               Real-time multi-physics Digital Twin simulating internal mechanical stress, salt-fog galvanic corrosion, and thermal stability in underground depot vaults.
             </p>
           </div>

@@ -16,31 +16,32 @@
   <link rel="icon" type="image/svg+xml" href="assets/images/Indian_Navy_Insignia.svg">
   <style>
     .module-detail-section {
-      background: rgba(6, 17, 34, 0.7);
+      background: #ffffff;
       border: 1px solid var(--navy-card-border);
       border-radius: 12px;
       padding: 2.5rem;
       margin-bottom: 3.5rem;
       position: relative;
+      box-shadow: 0 4px 20px rgba(15, 23, 42, 0.05);
     }
     .module-detail-section:target {
       border-color: var(--cyan-primary);
-      box-shadow: 0 0 25px var(--cyan-glow);
+      box-shadow: 0 0 20px rgba(0, 98, 204, 0.2);
     }
     .module-detail-header {
       display: flex;
       align-items: center;
       gap: 1.5rem;
       margin-bottom: 1.5rem;
-      border-bottom: 1px solid rgba(0, 229, 255, 0.15);
+      border-bottom: 1px solid #e2e8f0;
       padding-bottom: 1.25rem;
     }
     .module-big-icon {
       width: 64px;
       height: 64px;
       border-radius: 10px;
-      background: rgba(0, 229, 255, 0.1);
-      border: 1px solid rgba(0, 229, 255, 0.3);
+      background: rgba(0, 98, 204, 0.08);
+      border: 1px solid rgba(0, 98, 204, 0.2);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -54,8 +55,8 @@
       margin: 1.75rem 0;
     }
     .wf-step {
-      background: rgba(3, 10, 22, 0.6);
-      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
       border-radius: 6px;
       padding: 1rem;
       position: relative;
@@ -65,6 +66,7 @@
       font-size: 0.7rem;
       color: var(--gold-primary);
       text-transform: uppercase;
+      font-weight: 700;
       margin-bottom: 4px;
     }
     .wf-step-title {
@@ -81,13 +83,6 @@
   </style>
 </head>
 <body>
-
-  <!-- Top Military Classification Bar -->
-  <div class="classification-bar">
-    <div class="tag">RESTRICTED // TECHNICAL EXHIBITION</div>
-    <div>MISSION MODULES &amp; ARCHITECTURAL SOLUTIONS — AIIMS DEFENCE PLATFORM</div>
-    <div class="tag">AIR-GAPPED DEFENCE SYSTEM</div>
-  </div>
 
   <!-- Naval Navigation Header -->
   <header class="navy-navbar">
@@ -131,17 +126,17 @@
     </div>
 
     <!-- Quick Jump Sub-Navigation Bar -->
-    <div style="background: rgba(4, 13, 26, 0.9); border: 1px solid rgba(0, 229, 255, 0.2); border-radius: 8px; padding: 10px 16px; margin-bottom: 3rem; display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; font-size: 0.8rem; font-family: var(--font-mono);">
-      <a href="#production" class="tag" style="background: rgba(0, 229, 255, 0.08); padding: 5px 10px; border-radius: 4px;">1. Production</a>
-      <a href="#contracts" class="tag" style="background: rgba(0, 229, 255, 0.08); padding: 5px 10px; border-radius: 4px;">2. Orders &amp; Contracts</a>
-      <a href="#rugged" class="tag" style="background: rgba(0, 229, 255, 0.08); padding: 5px 10px; border-radius: 4px;">3. Rugged Devices</a>
-      <a href="#checksheets" class="tag" style="background: rgba(0, 229, 255, 0.08); padding: 5px 10px; border-radius: 4px;">4. Digital Checksheets</a>
-      <a href="#calibrations" class="tag" style="background: rgba(0, 229, 255, 0.08); padding: 5px 10px; border-radius: 4px;">5. Calibrations &amp; NABL</a>
-      <a href="#dashboards" class="tag" style="background: rgba(0, 229, 255, 0.08); padding: 5px 10px; border-radius: 4px;">6. Command Dashboards</a>
-      <a href="#inspections" class="tag" style="background: rgba(0, 229, 255, 0.08); padding: 5px 10px; border-radius: 4px;">7. Inspections &amp; Proof</a>
-      <a href="#hrms" class="tag" style="background: rgba(0, 229, 255, 0.08); padding: 5px 10px; border-radius: 4px;">8. Naval HRMS &amp; RBAC</a>
-      <a href="#security" class="tag" style="background: rgba(0, 229, 255, 0.08); padding: 5px 10px; border-radius: 4px;">9. Security &amp; VAPT</a>
-      <a href="#concurrency" class="tag" style="background: rgba(0, 229, 255, 0.08); padding: 5px 10px; border-radius: 4px;">10. Load Balancing</a>
+    <div style="background: #ffffff; border: 1px solid var(--navy-card-border); box-shadow: 0 2px 10px rgba(15,23,42,0.05); border-radius: 8px; padding: 10px 16px; margin-bottom: 3rem; display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; font-size: 0.8rem; font-family: var(--font-mono);">
+      <a href="#production" class="tag" style="background: #f1f5f9; color: #0f172a; border: 1px solid #cbd5e1; padding: 6px 12px; border-radius: 4px; font-weight: 600; text-decoration: none;">1. Production</a>
+      <a href="#contracts" class="tag" style="background: #f1f5f9; color: #0f172a; border: 1px solid #cbd5e1; padding: 6px 12px; border-radius: 4px; font-weight: 600; text-decoration: none;">2. Orders &amp; Contracts</a>
+      <a href="#rugged" class="tag" style="background: #f1f5f9; color: #0f172a; border: 1px solid #cbd5e1; padding: 6px 12px; border-radius: 4px; font-weight: 600; text-decoration: none;">3. Rugged Devices</a>
+      <a href="#checksheets" class="tag" style="background: #f1f5f9; color: #0f172a; border: 1px solid #cbd5e1; padding: 6px 12px; border-radius: 4px; font-weight: 600; text-decoration: none;">4. Digital Checksheets</a>
+      <a href="#calibrations" class="tag" style="background: #f1f5f9; color: #0f172a; border: 1px solid #cbd5e1; padding: 6px 12px; border-radius: 4px; font-weight: 600; text-decoration: none;">5. Calibrations &amp; NABL</a>
+      <a href="#dashboards" class="tag" style="background: #f1f5f9; color: #0f172a; border: 1px solid #cbd5e1; padding: 6px 12px; border-radius: 4px; font-weight: 600; text-decoration: none;">6. Command Dashboards</a>
+      <a href="#inspections" class="tag" style="background: #f1f5f9; color: #0f172a; border: 1px solid #cbd5e1; padding: 6px 12px; border-radius: 4px; font-weight: 600; text-decoration: none;">7. Inspections &amp; Proof</a>
+      <a href="#hrms" class="tag" style="background: #f1f5f9; color: #0f172a; border: 1px solid #cbd5e1; padding: 6px 12px; border-radius: 4px; font-weight: 600; text-decoration: none;">8. Naval HRMS &amp; RBAC</a>
+      <a href="#security" class="tag" style="background: #f1f5f9; color: #0f172a; border: 1px solid #cbd5e1; padding: 6px 12px; border-radius: 4px; font-weight: 600; text-decoration: none;">9. Security &amp; VAPT</a>
+      <a href="#concurrency" class="tag" style="background: #f1f5f9; color: #0f172a; border: 1px solid #cbd5e1; padding: 6px 12px; border-radius: 4px; font-weight: 600; text-decoration: none;">10. Load Balancing</a>
     </div>
 
     <!-- MODULE 1: PRODUCTION -->
