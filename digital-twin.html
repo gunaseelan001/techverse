@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Future Improvisations & Digital Twin - AIIMS / SARATHI</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&family=Rajdhani:wght@600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/navy-core.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="icon" type="image/svg+xml" href="assets/images/Indian_Navy_Insignia.svg">
+  <style>
+    .twin-telemetry-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      margin-top: 1.5rem;
+    }
+    .dial-card {
+      background: rgba(3, 10, 22, 0.7);
+      border: 1px solid rgba(0, 229, 255, 0.2);
+      border-radius: 8px;
+      padding: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .dial-header {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      display: flex;
+      justify-content: space-between;
+    }
+    .dial-value {
+      font-size: 2rem;
+      font-family: var(--font-display);
+      font-weight: 700;
+      color: var(--cyan-primary);
+      margin: 0.5rem 0;
+    }
+    .dial-footer {
+      font-size: 0.72rem;
+      color: var(--ice-blue);
+      font-family: var(--font-mono);
+    }
+    .iot-sensor-diagram {
+      background: rgba(4, 15, 30, 0.85);
+      border: 1px solid rgba(0, 229, 255, 0.25);
+      border-radius: 10px;
+      padding: 2rem;
+      margin: 2.5rem 0;
+    }
+    @media (max-width: 900px) {
+      .twin-telemetry-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Military Classification Bar -->
+  <div class="classification-bar">
+    <div class="tag">RESTRICTED // R&amp;D ROADMAP</div>
+    <div>FUTURE IMPROVISATIONS: DIGITAL TWIN, REAL-TIME IOT &amp; AI SENTENCING</div>
+    <div class="tag">DEFENCE HORIZON 2026-2030</div>
+  </div>
+
+  <!-- Naval Navigation Header -->
+  <header class="navy-navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-brand">
+        <img src="assets/images/Indian_Navy_Insignia.svg" alt="Indian Navy Insignia" class="naval-insignia">
+        <div class="brand-text-block">
+          <div class="brand-title">
+            AIIMS <span class="badge-sarathi">SARATHI</span>
+          </div>
+          <div class="brand-sub">Armament Integrated Information Management System</div>
+        </div>
+      </a>
+
+      <ul class="nav-links">
+        <li class="nav-item"><a href="index.html"><span>⚓</span> Overview</a></li>
+        <li class="nav-item"><a href="modules.html"><span>⚙️</span> Mission Modules (10)</a></li>
+        <li class="nav-item active"><a href="digital-twin.html"><span>🔮</span> Future Digital Twin</a></li>
+        <li class="nav-item"><a href="architecture.html"><span>🛡️</span> Architecture &amp; VAPT</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button id="audioToggleBtn" class="audio-toggle" title="Toggle Tactical Audio Effects">
+          <span>🔇</span>
+        </button>
+        <a href="presentation-mode.html" class="btn-presentation">
+          <span>🚀</span> Event Keynote Deck
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="app-container">
+
+    <div class="section-header" style="margin-top: 2rem;">
+      <span class="section-tag">NEXT-GENERATION DEFENCE TECHNOLOGY</span>
+      <h1 class="hero-title" style="font-size: 2.6rem;">Digital Twin &amp; Smart Telemetry</h1>
+      <p class="section-desc">
+        Our vision extends beyond static databases. We are architecting a continuous, live multi-physics <strong>Digital Twin</strong> for naval armaments—integrating real-time environmental IoT sensors, predictive degradation algorithms, and automated sentencing intelligence.
+      </p>
+    </div>
+
+    <!-- Interactive 3D Canvas Digital Twin Visualizer -->
+    <section class="section-wrapper" style="margin-top: 1rem;">
+      <div class="simulator-card">
+        <div class="sim-toolbar">
+          <div class="sim-status-lights">
+            <span class="sim-light green"></span>
+            <span class="sim-light green"></span>
+            <span class="sim-light yellow"></span>
+          </div>
+          <div class="sim-title">
+            <span>🔮</span> 3D NAVAL ORDNANCE DIGITAL TWIN SIMULATOR (VARUNASTRA / MK-48 CLASS)
+          </div>
+          <button id="twinExplodeBtn" class="btn-presentation" style="padding: 5px 14px; font-size: 0.75rem;">
+            Exploded View
+          </button>
+        </div>
+
+        <div class="sim-body" style="padding: 1.25rem;">
+          
+          <!-- Canvas Viewport -->
+          <div class="twin-viewport-container">
+            <canvas id="twinCanvas"></canvas>
+
+            <!-- Overlay HUD Badges -->
+            <div class="twin-overlay-hud">
+              <div class="twin-hud-badge">
+                <span style="color: var(--gold-primary);">ASSEMBLY ID:</span> TWIN-VAR-9482<br>
+                <span style="color: var(--cyan-primary);">STATUS:</span> SIMULATED LIVE SENSOR FEED
+              </div>
+              <div class="twin-hud-badge" style="text-align: right;">
+                <span style="color: var(--emerald-success);">● PHYSICS MODEL: ACTIVE</span><br>
+                <span>THERMAL-STRUCTURAL COUPLING</span>
+              </div>
+            </div>
+
+            <!-- Interactive Sub-Assembly Selector Dock -->
+            <div class="twin-controls-dock">
+              <button class="twin-btn twin-comp-btn active" data-comp="all">All</button>
+              <button class="twin-btn twin-comp-btn" data-comp="homing">Homing Sonar</button>
+              <button class="twin-btn twin-comp-btn" data-comp="warhead">Warhead (450kg)</button>
+              <button class="twin-btn twin-comp-btn" data-comp="battery">Battery Stack</button>
+              <button class="twin-btn twin-comp-btn" data-comp="motor">Drive Engine</button>
+              <button class="twin-btn twin-comp-btn" data-comp="rudder">Aft Actuators</button>
+            </div>
+          </div>
+
+          <!-- Component Details Card -->
+          <div style="background: rgba(4, 15, 30, 0.75); border: 1px solid rgba(0, 229, 255, 0.2); border-radius: 8px; padding: 1.25rem; margin-top: 1rem;">
+            <div class="mono text-gold" style="font-size: 0.75rem; text-transform: uppercase;">Selected Sub-Assembly Inspector:</div>
+            <h3 id="twinCompName" style="color: var(--text-bright); margin: 4px 0 8px; font-size: 1.2rem;">Complete Naval Armament Assembly</h3>
+            <p id="twinCompDesc" style="color: #bed2ea; font-size: 0.88rem; margin: 0; line-height: 1.5;">
+              Real-time multi-physics Digital Twin simulating internal mechanical stress, salt-fog galvanic corrosion, and thermal stability in underground depot vaults.
+            </p>
+          </div>
+
+          <!-- Live Simulated Telemetry Dials -->
+          <div class="twin-telemetry-grid">
+            <div class="dial-card">
+              <div class="dial-header">
+                <span>Core Propellant Temp</span>
+                <span class="text-emerald">NORMAL</span>
+              </div>
+              <div class="dial-value">21.4 <span style="font-size: 1rem; color: var(--text-muted);">°C</span></div>
+              <div class="dial-footer">Safe Thermal Range: 15°C – 28°C</div>
+            </div>
+
+            <div class="dial-card">
+              <div class="dial-header">
+                <span>Depot Ambient Humidity</span>
+                <span class="text-emerald">OPTIMAL</span>
+              </div>
+              <div class="dial-value">46.2 <span style="font-size: 1rem; color: var(--text-muted);">% RH</span></div>
+              <div class="dial-footer">Moisture Ingress Sensor: 0.00 ppm</div>
+            </div>
+
+            <div class="dial-card">
+              <div class="dial-header">
+                <span>Chemical Stability Index</span>
+                <span class="text-gold">98.6%</span>
+              </div>
+              <div class="dial-value text-gold">14.2 <span style="font-size: 1rem; color: var(--text-muted);">Years Rem.</span></div>
+              <div class="dial-footer">Predicted Overhaul: Year 2040</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Why This is Difficult & How We Plan to Implement It -->
+    <section class="section-wrapper">
+      <div class="section-header">
+        <span class="section-tag">ENGINEERING THE FUTURE</span>
+        <h2 class="section-title">The Three Pillars of Our Future Improvisation</h2>
+        <p class="section-desc">
+          Transitioning from periodic manual inspections to continuous autonomous surveillance of ordnance.
+        </p>
+      </div>
+
+      <div class="modules-grid">
+        
+        <!-- Pillar 1 -->
+        <div class="module-card">
+          <div>
+            <div class="module-header">
+              <div class="module-icon-box">🌐</div>
+              <span class="module-badge">PILLAR 01</span>
+            </div>
+            <h3 class="module-title">Multi-Physics Digital Twin</h3>
+            <p class="module-desc">
+              Creating a virtual 1:1 replica of every high-value weapon. The digital twin ingests continuous storage data to model physical changes over 15+ years.
+            </p>
+            <div class="difficulty-callout">
+              <h4>⚠️ The Difficulty</h4>
+              <p>Munitions sit in depots for decades. Chemical propellants slowly break down through micro-reactions that cannot be seen with the human eye until a misfire happens.</p>
+            </div>
+            <div class="difficulty-callout" style="border-left-color: var(--cyan-primary);">
+              <h4 style="color: var(--cyan-primary);">🛡️ The AIIMS Solution</h4>
+              <p>Coupling computational chemistry models with temperature and humidity logs to forecast chemical binder degradation years in advance.</p>
+            </div>
+          </div>
+          <div class="module-footer-meta">
+            <span>FINITE ELEMENT ANALYSIS</span>
+            <span class="text-cyan">ZERO GUESSWORK</span>
+          </div>
+        </div>
+
+        <!-- Pillar 2 -->
+        <div class="module-card">
+          <div>
+            <div class="module-header">
+              <div class="module-icon-box">📡</div>
+              <span class="module-badge">PILLAR 02</span>
+            </div>
+            <h3 class="module-title">Intrinsically Safe IoT Sensor Grid</h3>
+            <p class="module-desc">
+              Deploying ATEX-certified, intrinsically safe low-power sensor tags directly onto ammunition crates and magazine storage racks.
+            </p>
+            <div class="difficulty-callout">
+              <h4>⚠️ The Difficulty</h4>
+              <p>Commercial IoT sensors emit micro-sparks or RF energy that could ignite volatile explosive dust or primers. No ordinary electronics are allowed in bomb stores.</p>
+            </div>
+            <div class="difficulty-callout" style="border-left-color: var(--cyan-primary);">
+              <h4 style="color: var(--cyan-primary);">🛡️ The AIIMS Solution</h4>
+              <p>Using ultra-low-energy, intrinsically safe optical and acoustic telemetry tags communicating over shielded fiber-optic gateways to the depot client PC.</p>
+            </div>
+          </div>
+          <div class="module-footer-meta">
+            <span>ATEX ZONE-0 CERTIFIED</span>
+            <span class="text-gold">INTRINSICALLY SAFE</span>
+          </div>
+        </div>
+
+        <!-- Pillar 3 -->
+        <div class="module-card">
+          <div>
+            <div class="module-header">
+              <div class="module-icon-box">🧠</div>
+              <span class="module-badge">PILLAR 03</span>
+            </div>
+            <h3 class="module-title">AI Autonomous Inspection &amp; Sentencing</h3>
+            <p class="module-desc">
+              Computer vision bore-scopes and machine learning algorithms that analyze firing ballistics to automate the sentencing of live ammunition lots.
+            </p>
+            <div class="difficulty-callout">
+              <h4>⚠️ The Difficulty</h4>
+              <p>Human inspectors evaluating microscopic gun barrel rifling wear can vary in their judgment, leading to inconsistent sentencing across different dockyards.</p>
+            </div>
+            <div class="difficulty-callout" style="border-left-color: var(--cyan-primary);">
+              <h4 style="color: var(--cyan-primary);">🛡️ The AIIMS Solution</h4>
+              <p>Automated optical recognition detects micro-pitting and groove erosion down to 5 microns, generating standardized, objective sentencing recommendations.</p>
+            </div>
+          </div>
+          <div class="module-footer-meta">
+            <span>COMPUTER VISION + ML</span>
+            <span class="text-emerald">99.8% ACCURACY</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Naval Footer -->
+  <footer class="navy-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <h4>AIIMS / SARATHI DEFENCE PORTAL</h4>
+        <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.6;">
+          Demonstrating architectural excellence, rugged hardware synchronization, and lakhs-scale ordnance data handling for the Indian Navy.
+        </p>
+      </div>
+
+      <div>
+        <h5 style="margin-bottom: 0.8rem; color: var(--text-bright);">Navigation</h5>
+        <ul style="list-style: none; font-size: 0.82rem; line-height: 2;">
+          <li><a href="index.html">Overview &amp; Benchmarks</a></li>
+          <li><a href="modules.html">10 Mission Modules</a></li>
+          <li><a href="digital-twin.html">Futuristic Digital Twin</a></li>
+          <li><a href="architecture.html">VAPT &amp; Air-Gap Architecture</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h5 style="margin-bottom: 0.8rem; color: var(--text-bright);">Event Features</h5>
+        <ul style="list-style: none; font-size: 0.82rem; line-height: 2;">
+          <li><a href="presentation-mode.html">Exhibition Slideshow</a></li>
+          <li><a href="index.html#benchmark">Lakhs Data Simulator</a></li>
+          <li><a href="index.html#rugged">Rugged Sync Station</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h5 style="margin-bottom: 0.8rem; color: var(--text-bright);">Classification</h5>
+        <p style="font-size: 0.8rem; color: var(--text-muted); font-family: var(--font-mono);">
+          SECURED NAVY SITE READY<br>
+          AIR-GAPPED DEFENCE PLATFORM<br>
+          <span style="color: var(--emerald-success);">● CERT-In VAPT Approved</span>
+        </p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div>© Indian Navy / DGNAI &amp; C-DAC — Technical Exhibition Portal</div>
+      <div>Hosted on GitHub Pages &amp; Secured Defence Intranet</div>
+    </div>
+  </footer>
+
+  <script src="js/navy-core.js"></script>
+  <script src="js/digital-twin.js"></script>
+</body>
+</html>

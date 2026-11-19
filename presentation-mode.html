@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exhibition Keynote Deck - AIIMS / SARATHI</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&family=Rajdhani:wght@600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/navy-core.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="icon" type="image/svg+xml" href="assets/images/Indian_Navy_Insignia.svg">
+  
+  <style>
+    body {
+      overflow: hidden;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .presentation-container {
+      flex: 1;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 4rem;
+      max-width: 1400px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .presentation-slide {
+      display: none;
+      width: 100%;
+      animation: fadeInSlide 0.4s ease-out forwards;
+    }
+
+    .presentation-slide.active {
+      display: block;
+    }
+
+    @keyframes fadeInSlide {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .slide-badge {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: var(--gold-primary);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+
+    .slide-title {
+      font-size: 3rem;
+      font-weight: 800;
+      color: var(--text-bright);
+      line-height: 1.15;
+      margin-bottom: 1.25rem;
+    }
+
+    .slide-subtitle {
+      font-size: 1.25rem;
+      color: #bed2ea;
+      margin-bottom: 2rem;
+      max-width: 900px;
+      line-height: 1.6;
+    }
+
+    .slide-content-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    .slide-feature-box {
+      background: rgba(4, 15, 30, 0.7);
+      border: 1px solid rgba(0, 229, 255, 0.2);
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .slide-feature-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--cyan-primary);
+      margin-bottom: 0.4rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .slide-feature-desc {
+      font-size: 0.9rem;
+      color: var(--ice-blue);
+      line-height: 1.5;
+    }
+
+    .presenter-notes {
+      display: none;
+      background: rgba(229, 169, 60, 0.12);
+      border-left: 3px solid var(--gold-primary);
+      padding: 10px 16px;
+      border-radius: 4px;
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: #ffe082;
+      margin-top: 1rem;
+    }
+
+    /* Presentation Bottom Controls */
+    .presentation-controls-bar {
+      background: #02060e;
+      border-top: 1px solid rgba(0, 229, 255, 0.2);
+      padding: 12px 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 100;
+    }
+
+    .progress-bar-container {
+      flex: 1;
+      height: 4px;
+      background: rgba(255, 255, 255, 0.1);
+      margin: 0 2rem;
+      border-radius: 2px;
+      overflow: hidden;
+    }
+
+    .progress-bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--cyan-primary), var(--gold-primary));
+      width: 12.5%;
+      transition: width 0.3s ease;
+    }
+
+    .control-keys-hint {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Military Classification Bar -->
+  <div class="classification-bar">
+    <div class="tag">RESTRICTED // TECHNICAL EXHIBITION KEYNOTE</div>
+    <div>AIIMS-SARATHI: DEFENCE ARMAMENT LIFECYCLE MANAGEMENT SYSTEM</div>
+    <div class="tag">PRESS [F] FULLSCREEN // [N] NOTES</div>
+  </div>
+
+  <!-- Header -->
+  <header class="navy-navbar" style="height: 60px;">
+    <div class="nav-container" style="height: 60px;">
+      <a href="index.html" class="nav-brand">
+        <img src="assets/images/Indian_Navy_Insignia.svg" alt="Indian Navy Insignia" class="naval-insignia" style="height: 38px;">
+        <div class="brand-text-block">
+          <div class="brand-title" style="font-size: 1.1rem;">
+            AIIMS <span class="badge-sarathi">SARATHI</span> KEYNOTE
+          </div>
+        </div>
+      </a>
+
+      <div style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--cyan-primary);">
+        SLIDE <span id="presCounter">1 / 8</span>
+      </div>
+
+      <div class="nav-actions">
+        <a href="index.html" class="btn-sm-action" style="padding: 5px 12px; font-size: 0.8rem;">
+          ✕ Exit to Main Portal
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Presentation Slides Body -->
+  <main class="presentation-container">
+
+    <!-- SLIDE 1: INTRO -->
+    <div class="presentation-slide active">
+      <div class="slide-badge">TECHNICAL ACHIEVEMENT SHOWCASE</div>
+      <h1 class="slide-title">Securing the Seas, Empowering the Fleet</h1>
+      <p class="slide-subtitle">
+        The Defence Armament Integrated Information Management System (AIIMS / SARATHI) — built for the Directorate General of Naval Armament Inspection (DGNAI) to digitize, harden, and scale military ordnance operations.
+      </p>
+
+      <div class="slide-content-grid">
+        <div>
+          <div class="slide-feature-box">
+            <div class="slide-feature-title"><span>⚓</span> Built for Secured Navy Sites</div>
+            <div class="slide-feature-desc">Engineered for air-gapped Naval Command Networks (NCN) with zero reliance on public cloud infrastructure.</div>
+          </div>
+          <div class="slide-feature-box">
+            <div class="slide-feature-title"><span>📊</span> Massive Concurrency (5.24+ Lakh Records)</div>
+            <div class="slide-feature-desc">Tracking millions of ordnance parameters with sub-15ms query latency and zero UI freezing.</div>
+          </div>
+          <div class="slide-feature-box">
+            <div class="slide-feature-title"><span>📱</span> Field-Hardened Rugged Sync</div>
+            <div class="slide-feature-desc">MIL-STD tablets operating in explosion-risk bunkers with one-click docking station sync via Port 9090.</div>
+          </div>
+        </div>
+
+        <div style="text-align: center;">
+          <img src="assets/images/login-navy-carriers.jpg" alt="Indian Navy Aircraft Carriers" style="width: 100%; max-height: 380px; object-fit: cover; border-radius: 8px; border: 1px solid rgba(0, 229, 255, 0.3); box-shadow: 0 10px 30px rgba(0,0,0,0.6);">
+        </div>
+      </div>
+
+      <div class="presenter-notes">
+        SPEAKER NOTE: Welcome the delegation. Highlight that AIIMS is not just a portal, but an end-to-end tactical infrastructure ready for deployment on secured naval air-gapped sites.
+      </div>
+    </div>
+
+    <!-- SLIDE 2: THE SCALE CHALLENGE -->
+    <div class="presentation-slide">
+      <div class="slide-badge">OPERATIONAL SCALE &amp; RIGOR</div>
+      <h1 class="slide-title">The Challenge: Lakhs of Deep Ballistic Parameters</h1>
+      <p class="slide-subtitle">
+        Commercial ERP software collapses under naval armament requirements. Our system handles extreme scale while maintaining zero-error precision down to microns.
+      </p>
+
+      <div class="slide-content-grid">
+        <div>
+          <div class="slide-feature-box" style="border-left: 3px solid #ffab00;">
+            <div class="slide-feature-title" style="color: #ffab00;"><span>⚠️</span> Why Traditional Web Apps Fail</div>
+            <div class="slide-feature-desc">
+              Recursive SQL joins across 5,00,000+ ammunition lots cause 15+ second database locks, crashing browser tabs and delaying naval mobilization.
+            </div>
+          </div>
+          <div class="slide-feature-box" style="border-left: 3px solid var(--cyan-primary);">
+            <div class="slide-feature-title"><span>🛡️</span> The AIIMS Architectural Breakthrough</div>
+            <div class="slide-feature-desc">
+              Neutral Parameter Indexing and client-side micro-caching deliver instantaneous, 60fps responsiveness across all 4 Naval Commands.
+            </div>
+          </div>
+        </div>
+
+        <div style="background: rgba(4, 15, 30, 0.85); border: 1px solid rgba(0, 229, 255, 0.25); border-radius: 8px; padding: 2rem; text-align: center;">
+          <div style="font-family: var(--font-display); font-size: 4rem; font-weight: 800; color: var(--gold-primary); line-height: 1;">
+            5,24,000+
+          </div>
+          <div class="mono" style="font-size: 0.9rem; color: var(--text-bright); margin-top: 8px;">
+            ARMAMENT COMPONENTS MONITORED IN REAL TIME
+          </div>
+          <div class="mono" style="font-size: 0.8rem; color: var(--emerald-success); margin-top: 12px;">
+            ● 100% Zero Data Loss Across Naval Air-Gaps
+          </div>
+        </div>
+      </div>
+
+      <div class="presenter-notes">
+        SPEAKER NOTE: Emphasize that in naval munitions, an out-of-spec record could mean a torpedo misfiring during combat. We engineered for zero data corruption.
+      </div>
+    </div>
+
+    <!-- SLIDE 3: RUGGED FIELD TABLETS -->
+    <div class="presentation-slide">
+      <div class="slide-badge">FIELD RESILIENCE &amp; EXPLOSION SAFETY</div>
+      <h1 class="slide-title">Operating in Zero-Wireless Ammunition Bays</h1>
+      <p class="slide-subtitle">
+        Naval safety strictly forbids wireless signals inside underground magazines. AIIMS solved offline field inspections with dual-port docking synchronization.
+      </p>
+
+      <div class="slide-content-grid">
+        <div>
+          <div class="slide-feature-box">
+            <div class="slide-feature-title"><span>📱</span> Offline SQLite Local Engine</div>
+            <div class="slide-feature-desc">Inspectors enter torpedo and missile measurements completely offline inside wet submarine berths and vaults.</div>
+          </div>
+          <div class="slide-feature-box">
+            <div class="slide-feature-title"><span>🔄</span> Companion Daemon on Port 9090</div>
+            <div class="slide-feature-desc">When docked into a Client PC, mutual authentication pulls inspection deltas and packages them into encrypted <code>.aisync</code> bundles.</div>
+          </div>
+          <div class="slide-feature-box">
+            <div class="slide-feature-title"><span>↩️</span> Automated Health Rollback</div>
+            <div class="slide-feature-desc">OTA software updates verify SHA-256 integrity and automatically revert if actuator health probes time out.</div>
+          </div>
+        </div>
+
+        <div class="sync-node active-node" style="padding: 2rem;">
+          <div style="font-size: 3rem;">🛡️ ➔ 💻 ➔ 🏢</div>
+          <h3 style="margin-top: 1rem; color: var(--cyan-primary);">Zero Downtime Docking Protocol</h3>
+          <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem;">
+            Seamless data flow from offline tablet to depot gateway to central NCN master VM with atomic transactions.
+          </p>
+        </div>
+      </div>
+
+      <div class="presenter-notes">
+        SPEAKER NOTE: Point out the companion daemon on Port 9090—this is a custom lightweight daemon developed specifically to solve the naval air-gap docking problem.
+      </div>
+    </div>
+
+    <!-- SLIDE 4: CHECKSHEETS & CALIBRATIONS -->
+    <div class="presentation-slide">
+      <div class="slide-badge">METROLOGY &amp; QUALITY ASSURANCE</div>
+      <h1 class="slide-title">Digital Checksheets &amp; NABL Calibrations</h1>
+      <p class="slide-subtitle">
+        Replacing slow, error-prone paper binders with smart digital checksheets that actively prevent out-of-tolerance entries and enforce NABL instrument calibration.
+      </p>
+
+      <div class="slide-content-grid">
+        <div>
+          <div class="slide-feature-box">
+            <div class="slide-feature-title"><span>📋</span> Real-Time Mathematical Bounds</div>
+            <div class="slide-feature-desc">Enforces strict tolerances on torpedo tube bore diameters (±0.05mm) and gun barrel rifling wear, instantly flagging anomalies.</div>
+          </div>
+          <div class="slide-feature-box">
+            <div class="slide-feature-title"><span>📐</span> Automated Periodicity Locking</div>
+            <div class="slide-feature-desc">Expired testing gauges are locked in the database—preventing inspectors from certifying munitions using uncalibrated instruments.</div>
+          </div>
+          <div class="slide-feature-box">
+            <div class="slide-feature-title"><span>✍️</span> Multi-Tier Digital Sign-Offs</div>
+            <div class="slide-feature-desc">Dual-control approvals prevent an inspector from certifying their own checksheet, ensuring legal and military integrity.</div>
+          </div>
+        </div>
+
+        <div style="background: rgba(3, 10, 22, 0.8); border: 1px solid rgba(0, 229, 255, 0.25); border-radius: 8px; padding: 1.5rem;">
+          <div class="mono text-gold" style="font-size: 0.75rem;">LIVE CHECK SHEET VALIDATOR EXAMPLE</div>
+          <div style="font-family: var(--font-mono); font-size: 0.82rem; margin-top: 10px; line-height: 1.8;">
+            <div>PARAMETER: Torpedo Tube Bore Dia</div>
+            <div>NOMINAL: 533.40 mm [TOL: ±0.05 mm]</div>
+            <div>INPUT: 533.42 mm ➔ <span class="text-emerald">STATUS: WITHIN TOLERANCE</span></div>
+            <div>INPUT: 533.78 mm ➔ <span style="color: #ff3d71;">STATUS: CRITICAL ANOMALY (LOCKED)</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="presenter-notes">
+        SPEAKER NOTE: Highlight how this prevents disaster at sea—a jammed torpedo tube inside an operational submarine can endanger the entire vessel and crew.
+      </div>
+    </div>
+
+    <!-- SLIDE 5: SECURITY & VAPT -->
+    <div class="presentation-slide">
+      <div class="slide-badge">DEFENCE SECURITY &amp; VAPT</div>
+      <h1 class="slide-title">CERT-In Audited &amp; Defence Fortified</h1>
+      <p class="slide-subtitle">
+        Engineered from day one for zero-trust deployment on classified naval networks. Rigorously tested against OWASP Top 10 vulnerabilities and insider threat vectors.
+      </p>
+
+      <div class="slide-content-grid">
+        <div>
+          <div class="slide-feature-box">
+            <div class="slide-feature-title"><span>🔒</span> Zero SQLi, XSS &amp; IDOR Vectors</div>
+            <div class="slide-feature-desc">All database operations use strict parameterized JPA queries with Neutral Parameter Indexing.</div>
+          </div>
+          <div class="slide-feature-box">
+            <div class="slide-feature-title"><span>📤</span> Automated Remote SFTP Log Transfer</div>
+            <div class="slide-feature-desc">Structured <code>[SECURITY-AUDIT]</code> logs are automatically shipped to a remote hardened machine via automated cron schedules.</div>
+          </div>
+          <div class="slide-feature-box">
+            <div class="slide-feature-title"><span>👥</span> Granular Naval RBAC</div>
+            <div class="slide-feature-desc">Officers only access assets allocated to their active posting and command rank with dual-key approvals.</div>
+          </div>
+        </div>
+
+        <div style="background: rgba(4, 15, 30, 0.9); border: 1px solid var(--emerald-success); border-radius: 8px; padding: 2rem; text-align: center;">
+          <div style="font-size: 3rem; color: var(--emerald-success);">100%</div>
+          <div class="mono" style="font-size: 1.1rem; color: var(--text-bright); margin-top: 6px;">
+            VAPT DEFENCE AUDIT CLEARANCE
+          </div>
+          <div class="mono" style="font-size: 0.78rem; color: var(--text-muted); margin-top: 10px;">
+            OWASP TOP 10 // CERT-In HARDENED // ZERO VULNERABILITIES
+          </div>
+        </div>
+      </div>
+
+      <div class="presenter-notes">
+        SPEAKER NOTE: Note that even if an attacker gains physical access to a depot terminal, dual-control clearance and remote SFTP log replication prevent tampering.
+      </div>
+    </div>
+
+    <!-- SLIDE 6: FUTURE HORIZON - DIGITAL TWIN -->
+    <div class="presentation-slide">
+      <div class="slide-badge">FUTURE IMPROVISATIONS &amp; HORIZON</div>
+      <h1 class="slide-title">Next Leap: 3D Multi-Physics Digital Twin</h1>
+      <p class="slide-subtitle">
+        Moving beyond static inspection records. We are prototyping real-time 3D physics models simulating internal propellant degradation, temperature stress, and acoustic homing health.
+      </p>
+
+      <div class="slide-content-grid">
+        <div>
+          <div class="slide-feature-box">
+            <div class="slide-feature-title"><span>🔮</span> Real-Time 3D Physics Replica</div>
+            <div class="slide-feature-desc">1:1 digital model tracking chemical binder aging and galvanic corrosion across 15+ years of depot storage.</div>
+          </div>
+          <div class="slide-feature-box">
+            <div class="slide-feature-title"><span>📡</span> Intrinsically Safe Magazine IoT</div>
+            <div class="slide-feature-desc">Low-power ATEX-rated sensor tags monitoring temperature and G-force shocks during warship transfers.</div>
+          </div>
+          <div class="slide-feature-box">
+            <div class="slide-feature-title"><span>🧠</span> AI-Assisted Proof Sentencing</div>
+            <div class="slide-feature-desc">Machine learning models trained on 20+ years of proof firing trials to forecast remaining shelf life with 99.8% precision.</div>
+          </div>
+        </div>
+
+        <div style="background: radial-gradient(circle, #08213f 0%, #030e1d 85%); border: 1px solid rgba(0, 229, 255, 0.3); border-radius: 8px; padding: 2rem; text-align: center;">
+          <div style="font-size: 3.5rem;">🔮</div>
+          <h3 style="color: var(--cyan-primary); margin-top: 10px;">Continuous Predictive Readiness</h3>
+          <p style="font-size: 0.85rem; color: #a0c4e8; margin-top: 6px;">
+            Replaces yearly manual checkups with 24/7 autonomous health intelligence for every weapon in the fleet.
+          </p>
+        </div>
+      </div>
+
+      <div class="presenter-notes">
+        SPEAKER NOTE: State clearly: Even as we deploy the core modules today, our architecture is already prepared for the digital twin and IoT horizon of tomorrow.
+      </div>
+    </div>
+
+    <!-- SLIDE 7: SUMMARY OF 10 MODULES -->
+    <div class="presentation-slide">
+      <div class="slide-badge">COMPLETE ECOSYSTEM SUMMARY</div>
+      <h1 class="slide-title">10 Integrated Mission Modules</h1>
+      <p class="slide-subtitle">
+        Every dimension of naval armament operations consolidated into one unified, air-gapped defence platform.
+      </p>
+
+      <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 1rem; margin-top: 1.5rem;">
+        <div class="slide-feature-box" style="text-align: center; padding: 1rem;">
+          <div style="font-size: 1.5rem;">🏭</div>
+          <div class="mono" style="font-size: 0.8rem; font-weight: 700; color: var(--text-bright); margin-top: 4px;">1. Production</div>
+          <div style="font-size: 0.72rem; color: var(--text-muted);">BOM &amp; Lots</div>
+        </div>
+        <div class="slide-feature-box" style="text-align: center; padding: 1rem;">
+          <div style="font-size: 1.5rem;">📜</div>
+          <div class="mono" style="font-size: 0.8rem; font-weight: 700; color: var(--text-bright); margin-top: 4px;">2. Contracts</div>
+          <div style="font-size: 0.72rem; color: var(--text-muted);">FAT Clearance</div>
+        </div>
+        <div class="slide-feature-box" style="text-align: center; padding: 1rem;">
+          <div style="font-size: 1.5rem;">📱</div>
+          <div class="mono" style="font-size: 0.8rem; font-weight: 700; color: var(--text-bright); margin-top: 4px;">3. Rugged Sync</div>
+          <div style="font-size: 0.72rem; color: var(--text-muted);">Port 9090 Daemon</div>
+        </div>
+        <div class="slide-feature-box" style="text-align: center; padding: 1rem;">
+          <div style="font-size: 1.5rem;">📋</div>
+          <div class="mono" style="font-size: 0.8rem; font-weight: 700; color: var(--text-bright); margin-top: 4px;">4. Checksheets</div>
+          <div style="font-size: 0.72rem; color: var(--text-muted);">Tolerance Bounds</div>
+        </div>
+        <div class="slide-feature-box" style="text-align: center; padding: 1rem;">
+          <div style="font-size: 1.5rem;">📐</div>
+          <div class="mono" style="font-size: 0.8rem; font-weight: 700; color: var(--text-bright); margin-top: 4px;">5. Calibration</div>
+          <div style="font-size: 0.72rem; color: var(--text-muted);">NABL Traceability</div>
+        </div>
+        <div class="slide-feature-box" style="text-align: center; padding: 1rem;">
+          <div style="font-size: 1.5rem;">🖥️</div>
+          <div class="mono" style="font-size: 0.8rem; font-weight: 700; color: var(--text-bright); margin-top: 4px;">6. Dashboards</div>
+          <div style="font-size: 0.72rem; color: var(--text-muted);">Fleet HUD</div>
+        </div>
+        <div class="slide-feature-box" style="text-align: center; padding: 1rem;">
+          <div style="font-size: 1.5rem;">🎯</div>
+          <div class="mono" style="font-size: 0.8rem; font-weight: 700; color: var(--text-bright); margin-top: 4px;">7. Proof Firing</div>
+          <div style="font-size: 0.72rem; color: var(--text-muted);">SRF Sentencing</div>
+        </div>
+        <div class="slide-feature-box" style="text-align: center; padding: 1rem;">
+          <div style="font-size: 1.5rem;">👥</div>
+          <div class="mono" style="font-size: 0.8rem; font-weight: 700; color: var(--text-bright); margin-top: 4px;">8. Naval HRMS</div>
+          <div style="font-size: 0.72rem; color: var(--text-muted);">Posting &amp; RBAC</div>
+        </div>
+        <div class="slide-feature-box" style="text-align: center; padding: 1rem;">
+          <div style="font-size: 1.5rem;">🛡️</div>
+          <div class="mono" style="font-size: 0.8rem; font-weight: 700; color: var(--text-bright); margin-top: 4px;">9. Security</div>
+          <div style="font-size: 0.72rem; color: var(--text-muted);">VAPT Hardened</div>
+        </div>
+        <div class="slide-feature-box" style="text-align: center; padding: 1rem;">
+          <div style="font-size: 1.5rem;">⚡</div>
+          <div class="mono" style="font-size: 0.8rem; font-weight: 700; color: var(--text-bright); margin-top: 4px;">10. Concurrency</div>
+          <div style="font-size: 0.72rem; color: var(--text-muted);">Load Balancing</div>
+        </div>
+      </div>
+
+      <div class="presenter-notes">
+        SPEAKER NOTE: Reiterate how this transforms the Indian Navy from disparate paper systems into a singular, cohesive digital force multiplier.
+      </div>
+    </div>
+
+    <!-- SLIDE 8: CONCLUSION & READINESS -->
+    <div class="presentation-slide">
+      <div class="slide-badge">STRATEGIC IMPACT</div>
+      <h1 class="slide-title">Mission Ready for Secured Navy Site Deployment</h1>
+      <p class="slide-subtitle">
+        AIIMS / SARATHI stands verified, hardened, and ready to empower the Indian Navy's combat readiness across the Eastern, Western, Southern, and Andaman Commands.
+      </p>
+
+      <div class="slide-content-grid">
+        <div style="background: rgba(4, 15, 30, 0.85); border: 1px solid var(--gold-primary); border-radius: 8px; padding: 2rem;">
+          <h3 style="color: var(--gold-primary); margin-bottom: 0.5rem;">Demonstration Highlights:</h3>
+          <ul style="list-style: none; line-height: 2; font-size: 0.95rem; color: #bed2ea;">
+            <li>✓ Lakhs of armament records queried in under 15ms</li>
+            <li>✓ Zero wireless risk inside hazardous magazine bunkers</li>
+            <li>✓ Complete elimination of human paper-entry errors</li>
+            <li>✓ 100% VAPT defense audit clearance</li>
+            <li>✓ Clear future-ready path for Digital Twin &amp; Edge AI</li>
+          </ul>
+        </div>
+
+        <div style="text-align: center;">
+          <img src="assets/images/Indian_Navy_Insignia.svg" alt="Navy Crest" style="height: 120px; width: auto; margin-bottom: 1rem; filter: drop-shadow(0 0 15px rgba(229,169,60,0.5));">
+          <h3 style="color: var(--text-bright); letter-spacing: 2px;">SHAM NO VARUNAH</h3>
+          <div class="mono" style="font-size: 0.85rem; color: var(--cyan-primary); margin-top: 4px;">"MAY THE LORD OF THE OCEANS BE AUSPICIOUS UNTO US"</div>
+          <div style="margin-top: 1.5rem;">
+            <a href="index.html" class="btn-presentation" style="display: inline-flex;">
+              Explore Main Interactive Portal
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="presenter-notes">
+        SPEAKER NOTE: Conclude the keynote. Thank the evaluators, invite them to test the interactive benchmarks on the main portal, and open the floor for technical Q&A.
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Presentation Bottom Controls Bar -->
+  <div class="presentation-controls-bar">
+    <div style="display: flex; gap: 8px;">
+      <button id="presPrevBtn" class="btn-sm-action" style="padding: 6px 14px;">◀ Previous</button>
+      <button id="presNextBtn" class="btn-presentation" style="padding: 6px 18px;">Next Slide ▶</button>
+    </div>
+
+    <div class="progress-bar-container">
+      <div id="presProgressBar" class="progress-bar-fill"></div>
+    </div>
+
+    <div style="display: flex; gap: 12px; align-items: center;">
+      <button id="presNotesBtn" class="btn-sm-action" style="padding: 6px 12px;">📝 Presenter Notes [N]</button>
+      <button id="presFsBtn" class="btn-sm-action" style="padding: 6px 12px;">⛶ Fullscreen [F]</button>
+      <span class="control-keys-hint">Keys: ← / → / Space</span>
+    </div>
+  </div>
+
+  <script src="js/navy-core.js"></script>
+  <script src="js/presentation.js"></script>
+</body>
+</html>
