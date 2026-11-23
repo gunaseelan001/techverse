@@ -20,333 +20,243 @@
   <!-- Naval Navigation Header -->
   <header class="navy-navbar">
     <div class="nav-container">
-      <a href="index.html" class="nav-brand">
+      <a href="#video-hero" class="nav-brand">
         <img src="assets/images/Indian_Navy_Insignia.svg" alt="Indian Navy Insignia" class="naval-insignia">
         <div class="brand-text-block">
           <div class="brand-title">
             AIIMS <span class="badge-sarathi">SARATHI</span>
           </div>
-          <div class="brand-sub">Armament Inspection Information Management System</div>
+          <div class="brand-sub">Armament Integrated Information Management System</div>
         </div>
       </a>
 
       <ul class="nav-links">
-        <li class="nav-item active"><a href="index.html"><span>⚓</span> Overview</a></li>
-        <li class="nav-item"><a href="modules.html"><span>⚙️</span> Mission Modules (10)</a></li>
-        <li class="nav-item"><a href="digital-twin.html"><span>🔮</span> Future Digital Twin</a></li>
-        <li class="nav-item"><a href="architecture.html"><span>🛡️</span> Architecture &amp; VAPT</a></li>
+        <li class="nav-item"><a href="#video-hero"><span>🎥</span> Overview &amp; Video</a></li>
+        <li class="nav-item"><a href="#huge-data"><span>📊</span> Lakhs of Data</a></li>
+        <li class="nav-item"><a href="#core-modules"><span>⚙️</span> Modules &amp; Services</a></li>
+        <li class="nav-item"><a href="#rugged-devices"><span>📱</span> Rugged Field Units</a></li>
+        <li class="nav-item"><a href="#security-vapt"><span>🛡️</span> Security &amp; VAPT</a></li>
       </ul>
 
       <div class="nav-actions">
-        <button id="audioToggleBtn" class="audio-toggle" title="Toggle Tactical Audio Effects">
-          <span>🔇</span>
+        <button id="audioToggleBtn" class="audio-toggle" style="width: auto; padding: 0 12px;" title="Toggle Tactical Audio Effects">
+          <span>🔇 Audio</span>
         </button>
-        <a href="presentation-mode.html" class="btn-presentation">
-          <span>🚀</span> Event Keynote Deck
-        </a>
       </div>
     </div>
   </header>
 
-  <!-- Main Content Layout -->
+  <!-- Main Container -->
   <main class="app-container">
 
-    <!-- Hero Section -->
-    <section class="hero-section">
-      <div class="hero-content">
-        <div class="hero-pill">
+    <!-- FRONT PAGE: Hero Section with Live Running Video -->
+    <section id="video-hero" class="section-wrapper" style="margin-top: 1rem; margin-bottom: 2rem;">
+      <div style="text-align: center; max-width: 900px; margin: 0 auto 1.5rem;">
+        <div class="hero-pill" style="margin-bottom: 1rem;">
           <span class="pulse-dot"></span>
-          <span>OPERATIONAL READINESS: 100% AIR-GAPPED NAVY DEPLOYMENT</span>
+          <span>INDIAN NAVY SECURED SITE DEPLOYMENT // AIR-GAPPED ORDNANCE PLATFORM</span>
         </div>
 
-        <h1 class="hero-title">
-          Mission-Critical <span class="highlight-gold">Armament Lifecycle</span> &amp; <span class="highlight-cyan">Rugged Intelligence</span>
+        <h1 class="hero-title" style="font-size: 2.75rem; margin-bottom: 0.8rem;">
+          Mission-Critical <span class="highlight-gold">Armament Lifecycle</span> &amp; <span class="highlight-cyan">Field Intelligence</span>
         </h1>
 
-        <p class="hero-lead">
-          Built to withstand the most demanding defence environments. AIIMS manages <strong>lakhs of armament records</strong>—from heavyweight torpedoes and guided missiles to naval gun ammunition lots—with military-grade zero-trust security, offline rugged device syncing, and sub-millisecond query performance.
-        </p>
-
-        <!-- Key Metrics Strip -->
-        <div class="hero-stats-strip">
-          <div class="stat-item">
-            <div class="stat-number"><span class="counter-val" data-target="524000" data-suffix="+">5,24,000+</span></div>
-            <div class="stat-label">Armament Assets Tracked</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-number text-cyan">&lt; <span class="counter-val" data-target="15" data-suffix="ms">15ms</span></div>
-            <div class="stat-label">Indexed Query Response</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-number text-gold">100<span class="unit">%</span></div>
-            <div class="stat-label">CERT-In / VAPT Hardened</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-number text-emerald">Zero</div>
-            <div class="stat-label">Paper Trail / Air-Gap Sync</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Tactical HUD Visualizer -->
-      <div class="hero-visual-card">
-        <div class="hud-header">
-          <div class="hud-title">
-            <span>📡</span> REAL-TIME FLEET ARMAMENT TELEMETRY
-          </div>
-          <span class="status-tag active">NCN NETWORK: SECURED</span>
-        </div>
-
-        <!-- Radar Sweep Simulation -->
-        <div class="hud-radar-container">
-          <div class="radar-crosshair-x"></div>
-          <div class="radar-crosshair-y"></div>
-          <div class="radar-circle c1"></div>
-          <div class="radar-circle c2"></div>
-          <div class="radar-circle c3"></div>
-          <div class="radar-sweep"></div>
-          
-          <!-- Blips representing Naval Command Depots -->
-          <div class="radar-blip b1" title="Eastern Naval Command (ENC) Vizag"></div>
-          <div class="radar-blip b2" title="Western Naval Command (WNC) Mumbai"></div>
-          <div class="radar-blip b3" title="Southern Naval Command (SNC) Kochi"></div>
-        </div>
-
-        <!-- Tactical HUD Quick Indicators -->
-        <div class="hud-info-grid">
-          <div class="hud-info-cell">
-            <div class="hud-label">CENTRAL NCN VM CLUSTER</div>
-            <div class="hud-val text-emerald">● 10.184.49.201 [ACTIVE]</div>
-          </div>
-          <div class="hud-info-cell">
-            <div class="hud-label">RUGGED FLEET SYNC DAEMON</div>
-            <div class="hud-val text-cyan">PORT 9090 [LISTENING]</div>
-          </div>
-          <div class="hud-info-cell">
-            <div class="hud-label">ACTIVE TORPEDO LOTS</div>
-            <div class="hud-val text-gold">1,482 BATCHES VERIFIED</div>
-          </div>
-          <div class="hud-info-cell">
-            <div class="hud-label">CALIBRATION PERIODICITY</div>
-            <div class="hud-val text-bright">99.8% COMPLIANT</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Section 1: The Magnitude - Why Our System is Tough -->
-    <section class="section-wrapper">
-      <div class="section-header">
-        <span class="section-tag">ENGINEERING RESILIENCE</span>
-        <h2 class="section-title">Built for the Toughest Military Conditions</h2>
-        <p class="section-desc">
-          Commercial enterprise software collapses under naval armament conditions. AIIMS was purpose-built to conquer extreme operational, environmental, and security constraints without a single point of failure.
+        <p class="hero-lead" style="margin: 0 auto; font-size: 1.1rem; color: #475569;">
+          Developed for the Directorate General of Naval Armament Inspection (DGNAI), AIIMS is engineered to handle <strong>lakhs of armament components</strong>—from heavyweight torpedoes and guided missiles to naval gun ammunition lots—with military-grade zero-trust security and offline rugged field resilience.
         </p>
       </div>
 
-      <div class="modules-grid">
-        <!-- Toughness Card 1: Lakhs of Data -->
-        <div class="module-card">
-          <div>
-            <div class="module-header">
-              <div class="module-icon-box">📊</div>
-              <span class="module-badge">HIGH CONCURRENCY</span>
-            </div>
-            <h3 class="module-title">Lakhs of Ordnance Records</h3>
-            <p class="module-desc">
-              Managing 5,00,000+ explosive munitions, sub-assemblies, and historical firing trials across 4 naval commands without database locking or web page slowdowns.
-            </p>
-            <div class="difficulty-callout">
-              <h4>⚠️ The Extreme Difficulty</h4>
-              <p>Standard SQL joins across millions of deep ballistic parameters cause multi-second table locks and frozen browser tabs.</p>
-            </div>
-            <div class="difficulty-callout" style="border-left-color: var(--cyan-primary);">
-              <h4 style="color: var(--cyan-primary);">🛡️ How AIIMS Conquered It</h4>
-              <p>Implemented <strong>Neutral Parameter Indexing</strong> and sub-second caching, slashing query times from 15+ seconds down to under 12 milliseconds.</p>
-            </div>
+      <!-- MAIN VIDEO SHOWCASE PLAYER (RUNNING ON FRONT PAGE) -->
+      <div class="video-showcase-card">
+        <div class="video-showcase-header">
+          <div class="video-showcase-title">
+            <span style="color: var(--cyan-primary);">▶</span> OPERATIONAL DEMO &amp; SYSTEM OVERVIEW
           </div>
-          <div class="module-footer-meta">
-            <span>BENCHMARK: 5.24 LAKH ROWS</span>
-            <span class="text-emerald">60 FPS RENDER</span>
+          <div id="videoStatusBadge" class="status-tag active">
+            ● VIDEO RUNNING
           </div>
         </div>
 
-        <!-- Toughness Card 2: Explosive Bays & Zero Wireless -->
-        <div class="module-card">
-          <div>
-            <div class="module-header">
-              <div class="module-icon-box">🛡️</div>
-              <span class="module-badge">EXPLOSION SAFETY</span>
-            </div>
-            <h3 class="module-title">Zero-RF Hazardous Zones</h3>
-            <p class="module-desc">
-              Operating inside underground magazines, submarine torpedo rooms, and explosive bays where Wi-Fi, Bluetooth, and cellular signals are strictly forbidden by naval safety protocols.
-            </p>
-            <div class="difficulty-callout">
-              <h4>⚠️ The Extreme Difficulty</h4>
-              <p>Web applications usually require constant internet or LAN connectivity. In ammunition bunkers, electromagnetic radiation can trigger pyrotechnics.</p>
-            </div>
-            <div class="difficulty-callout" style="border-left-color: var(--cyan-primary);">
-              <h4 style="color: var(--cyan-primary);">🛡️ How AIIMS Conquered It</h4>
-              <p>Custom <strong>Military Rugged Devices</strong> with local encrypted SQLite engines. Inspect completely offline, dock into Client PCs, and sync in 1-click via Port 9090 daemons.</p>
-            </div>
-          </div>
-          <div class="module-footer-meta">
-            <span>OFFLINE FIRST ARCHITECTURE</span>
-            <span class="text-cyan">ZERO RF RISK</span>
-          </div>
+        <!-- Video Player Wrapper -->
+        <div class="video-player-wrapper">
+          <video 
+            id="heroVideo" 
+            class="main-video-element" 
+            autoplay 
+            loop 
+            muted 
+            playsinline 
+            controls 
+            poster="assets/images/login-navy-carriers.jpg"
+          >
+            <!-- Primary local video file path -->
+            <source src="assets/video.mp4" type="video/mp4">
+            <source src="assets/demo.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
         </div>
 
-        <!-- Toughness Card 3: 100% VAPT & Air-Gapped Zero-Trust -->
-        <div class="module-card">
-          <div>
-            <div class="module-header">
-              <div class="module-icon-box">🔒</div>
-              <span class="module-badge">DEFENCE SECURITY</span>
-            </div>
-            <h3 class="module-title">Secured Naval Site &amp; VAPT</h3>
-            <p class="module-desc">
-              Subjected to rigorous Vulnerability Assessment and Penetration Testing (VAPT) and CERT-In defence audits to guarantee absolute immunity from hostile tampering.
-            </p>
-            <div class="difficulty-callout">
-              <h4>⚠️ The Extreme Difficulty</h4>
-              <p>Armament readiness data is high-value military intelligence. A single injection flaw or unauthorized privilege escalation could compromise national security.</p>
-            </div>
-            <div class="difficulty-callout" style="border-left-color: var(--cyan-primary);">
-              <h4 style="color: var(--cyan-primary);">🛡️ How AIIMS Conquered It</h4>
-              <p>Strict dual-authorization RBAC, cryptographic SHA-256 package verification, automated remote SFTP audit logging, and zero-trust air-gapped isolation.</p>
-            </div>
+        <!-- Video Control & Local File Picker Bar -->
+        <div class="video-action-bar">
+          <div class="video-info-note">
+            <span>📹 Running <strong>assets/video.mp4</strong></span> — Place your video in <code>aiims/assets/video.mp4</code> or choose one from your computer:
           </div>
-          <div class="module-footer-meta">
-            <span>CERT-IN HARDENED</span>
-            <span class="text-gold">ZERO VULNERABILITIES</span>
+
+          <div style="display: flex; gap: 8px; align-items: center;">
+            <input type="file" id="localVideoPicker" accept="video/mp4,video/webm,video/ogg,video/quicktime" style="display: none;">
+            <button id="chooseVideoBtn" class="btn-upload-video">
+              <span>📁 Select Local Video File</span>
+            </button>
+            <button id="videoAudioBtn" class="btn-sm-action">
+              <span>🔇 Unmute Video</span>
+            </button>
           </div>
+        </div>
+      </div>
+
+      <!-- Key Quantitative Scale Highlights -->
+      <div class="hero-stats-strip" style="margin-top: 1.5rem;">
+        <div class="stat-item">
+          <div class="stat-number text-bright">Lakhs<span class="unit">+</span></div>
+          <div class="stat-label">Armament Assets &amp; Lots Tracked</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number text-cyan">Millions<span class="unit">+</span></div>
+          <div class="stat-label">Ballistic &amp; Inspection Telemetry Records</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number text-gold">Thousands<span class="unit">+</span></div>
+          <div class="stat-label">NABL Calibrated Testing Instruments</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number text-emerald">All 4</div>
+          <div class="stat-label">Strategic Naval Commands Unified</div>
         </div>
       </div>
     </section>
 
-    <!-- Section 2: Interactive Lakhs-of-Data Query Benchmark Simulator -->
-    <section class="section-wrapper">
-      <div class="simulator-card">
-        <div class="sim-toolbar">
-          <div class="sim-status-lights">
-            <span class="sim-light red"></span>
-            <span class="sim-light yellow"></span>
-            <span class="sim-light green"></span>
-          </div>
-          <div class="sim-title">
-            <span>⚡</span> HIGH-SCALE ARMAMENT QUERY BENCHMARK SIMULATOR (5,24,000+ RECORDS)
-          </div>
-          <div class="mono text-muted" style="font-size: 0.75rem;">ENGINE: NEUTRAL PARAMETER INDEXING</div>
-        </div>
-
-        <div class="sim-body">
-          <div class="data-benchmark-grid">
-            
-            <!-- Controls Panel -->
-            <div class="data-controls-panel">
-              <h4 style="font-size: 1rem; color: var(--text-bright); margin-bottom: 0.5rem;">Tactical Filter Parameters</h4>
-              
-              <div class="control-group">
-                <label class="control-label">Armament Category</label>
-                <select id="benchmarkCategory" class="control-select">
-                  <option value="all">All Munitions &amp; Assemblies (5.24 Lakhs)</option>
-                  <option value="TORP-VAR-">Heavyweight Torpedoes (14,200)</option>
-                  <option value="MIS-B8-">Surface-to-Air Missiles (68,400)</option>
-                  <option value="SHELL-76-">76mm Naval Gun Shell Lots (2,20,000)</option>
-                  <option value="FUZE-EP-">Electronic Proximity Fuzes (1,75,000)</option>
-                  <option value="TT-SUB-">Submarine Torpedo Tubes (8,500)</option>
-                  <option value="ASW-DC-">ASW Depth Charges (37,900)</option>
-                </select>
-              </div>
-
-              <div class="control-group">
-                <label class="control-label">Naval Command Base</label>
-                <select id="benchmarkCommand" class="control-select">
-                  <option value="all">All Commands (ENC, WNC, SNC, ANC)</option>
-                  <option value="Eastern">Eastern Naval Command (Vizag)</option>
-                  <option value="Western">Western Naval Command (Mumbai)</option>
-                  <option value="Southern">Southern Naval Command (Kochi)</option>
-                  <option value="Andaman">Andaman &amp; Nicobar Command (Port Blair)</option>
-                </select>
-              </div>
-
-              <div class="control-group">
-                <label class="control-label">Search Serial / Lot Number</label>
-                <input type="text" id="benchmarkSearch" class="control-input" placeholder="e.g. TORP, LOT-2024, B8...">
-              </div>
-
-              <button id="runBenchmarkBtn" class="btn-tactical">
-                <span>⚡ Execute Instant High-Scale Query</span>
-              </button>
-
-              <div style="font-size: 0.72rem; color: var(--text-muted); line-height: 1.4; margin-top: 0.5rem;">
-                *Tests live JavaScript in-memory indexing against simulated database records, showing how AIIMS guarantees sub-15ms rendering on massive naval datasets.
-              </div>
-            </div>
-
-            <!-- Results & Metrics Display -->
-            <div class="data-results-panel">
-              
-              <!-- Metrics Bar -->
-              <div class="benchmark-metrics-bar">
-                <div class="metric-pill">
-                  <span class="label">Dataset Pool</span>
-                  <span id="metricScanned" class="value">5,24,000 items</span>
-                </div>
-                <div class="metric-pill">
-                  <span class="label">AIIMS Response</span>
-                  <span id="metricLatency" class="value fast">3.4 ms</span>
-                </div>
-                <div class="metric-pill">
-                  <span class="label">Legacy SQL Join Time</span>
-                  <span id="metricLegacy" class="value" style="color: #ffab00; font-size: 1.1rem;">12.4 sec (Lagging)</span>
-                </div>
-                <div class="metric-pill">
-                  <span class="label">Performance Gain</span>
-                  <span id="metricSpeedup" class="value" style="color: var(--cyan-light);">1,280x Faster</span>
-                </div>
-              </div>
-
-              <!-- Data Table -->
-              <div class="tactical-table-wrapper">
-                <table class="tactical-table">
-                  <thead>
-                    <tr>
-                      <th>Serial Identifier</th>
-                      <th>Armament Nomenclature</th>
-                      <th>Command / Depot</th>
-                      <th>Lot Batch</th>
-                      <th>Service Status</th>
-                      <th>Readiness</th>
-                    </tr>
-                  </thead>
-                  <tbody id="benchmarkTableBody">
-                    <!-- Populated by data-simulator.js -->
-                  </tbody>
-                </table>
-              </div>
-
-            </div>
-
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Section 3: The 10 Core Modules Overview -->
-    <section class="section-wrapper">
+    <!-- SECTION 1: THE HUGE DATA WE ARE HANDLING -->
+    <section id="huge-data" class="section-wrapper">
       <div class="section-header">
-        <span class="section-tag">COMPREHENSIVE DEFENCE CAPABILITIES</span>
-        <h2 class="section-title">The Complete Armament Management Ecosystem</h2>
+        <span class="section-tag">MASSIVE DATA SCALE &amp; RIGOR</span>
+        <h2 class="section-title">Handling Lakhs of Naval Armament Records</h2>
         <p class="section-desc">
-          Every facet of naval armament operations integrated into one cohesive, hardened platform. Click between <strong>"The Challenge"</strong> and <strong>"AIIMS Solution"</strong> on each module to see how complex problems were solved simply.
+          Managing naval munitions is unlike standard commercial inventory. Every single armament requires tracking recursive multi-tier sub-assemblies, ballistic firing histories, pyrotechnic lot batches, and calibration curves across all Naval Commands.
+        </p>
+      </div>
+
+      <!-- Breakdown of Lakhs of Data Categories -->
+      <div class="scale-breakdown-grid">
+
+        <!-- Category 1: Torpedoes -->
+        <div class="scale-category-card">
+          <div class="scale-category-header">
+            <div class="scale-cat-icon">⚓</div>
+            <div>
+              <div class="scale-cat-title">Heavyweight &amp; Lightweight Torpedoes</div>
+              <div class="mono" style="font-size: 0.72rem; color: var(--cyan-primary);">VARUNASTRA // SUBMARINE TORPEDOES</div>
+            </div>
+          </div>
+          <div class="scale-cat-count">Thousands of Assemblies</div>
+          <p class="scale-cat-desc">
+            Complete lifecycle tracking for combat torpedoes, submarine torpedo tubes, acoustic homing transducers, silver-zinc battery stacks, and contra-rotating propulsion units.
+          </p>
+          <ul class="scale-depots-list">
+            <li><span>📍</span> Submarine Berths: Vizag &amp; Mumbai</li>
+            <li><span>📍</span> Torpedo Preparation Workshops (TPW)</li>
+            <li><span>📍</span> Sub-Millimeter Tube Bore Alignment Checks</li>
+          </ul>
+        </div>
+
+        <!-- Category 2: Missiles -->
+        <div class="scale-category-card">
+          <div class="scale-category-header">
+            <div class="scale-cat-icon">🚀</div>
+            <div>
+              <div class="scale-cat-title">Naval Guided Missiles</div>
+              <div class="mono" style="font-size: 0.72rem; color: var(--cyan-primary);">BARAK-8 // VL-SRSAM // ANTI-SHIP</div>
+            </div>
+          </div>
+          <div class="scale-cat-count">Tens of Thousands of Units</div>
+          <p class="scale-cat-desc">
+            Tracking vertical launch missile canisters, solid propellant aging rates, rocket motor pressure telemetry, pneumatic seals, and RF seeker head electronics.
+          </p>
+          <ul class="scale-depots-list">
+            <li><span>📍</span> Fleet War-Reserves: ENC &amp; WNC</li>
+            <li><span>📍</span> Periodic Pressure Leak Checks</li>
+            <li><span>📍</span> Warship Magazine Readiness HUD</li>
+          </ul>
+        </div>
+
+        <!-- Category 3: Naval Gun Ammunition -->
+        <div class="scale-category-card">
+          <div class="scale-category-header">
+            <div class="scale-cat-icon">💥</div>
+            <div>
+              <div class="scale-cat-title">Naval Gun Ammunition Lots</div>
+              <div class="mono" style="font-size: 0.72rem; color: var(--cyan-primary);">76mm OTOBRED // 30mm AK-630</div>
+            </div>
+          </div>
+          <div class="scale-cat-count">Lakhs of Shell Lots</div>
+          <p class="scale-cat-desc">
+            Managing huge volumes of high-rate gun rounds. Tracks primer indentation, casing forging heat numbers, propellant mass balance, and muzzle velocity deterioration.
+          </p>
+          <ul class="scale-depots-list">
+            <li><span>📍</span> Gun Mounting Bore Wear Checks</li>
+            <li><span>📍</span> Series Proof Firing Verification</li>
+            <li><span>📍</span> Ammunition Periodicity Inspections</li>
+          </ul>
+        </div>
+
+        <!-- Category 4: Fuzes & Depth Charges -->
+        <div class="scale-category-card">
+          <div class="scale-category-header">
+            <div class="scale-cat-icon">💣</div>
+            <div>
+              <div class="scale-cat-title">Fuzes &amp; ASW Depth Charges</div>
+              <div class="mono" style="font-size: 0.72rem; color: var(--cyan-primary);">PROXIMITY FUZES // RBU-6000</div>
+            </div>
+          </div>
+          <div class="scale-cat-count">Lakhs of Ordnance Components</div>
+          <p class="scale-cat-desc">
+            Managing electronic proximity fuzes, mechanical delay fuzes, explosive booster pellets, depth bomb hydrostatic switches, and pyrotechnic stores.
+          </p>
+          <ul class="scale-depots-list">
+            <li><span>📍</span> Chemical Propellant Shelf-Life Curves</li>
+            <li><span>📍</span> Underground Magazine Temperature Logs</li>
+            <li><span>📍</span> Automated Lot Recall Workflows</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Why It's Tough to Handle This Data -->
+      <div class="difficulty-callout" style="margin-top: 2rem;">
+        <h4>⚠️ Why Handling Lakhs of Armament Data in Navy is Exceptionally Tough</h4>
+        <p style="margin-bottom: 0.5rem;">
+          In commercial software, if an inventory count has a temporary lag or glitch, it's a minor inconvenience. In naval armament operations:
+        </p>
+        <ul style="margin-left: 1.5rem; line-height: 1.8; color: #475569; font-size: 0.92rem;">
+          <li><strong>Zero Error Tolerance</strong>: A microscopic tolerance deviation in tube clearance or an unrecorded propellant moisture variation can cause weapon jamming or firing failure at sea.</li>
+          <li><strong>Air-Gapped &amp; Distributed</strong>: The system operates across distributed coastal naval depots with no public cloud or internet access. Everything runs on secured local naval servers.</li>
+          <li><strong>Decades of Ballistic History</strong>: Every ammunition lot carries years of proof firing trials, SRF reliability coefficients, and chemical stability certifications.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- SECTION 2: OPERATIONAL MISSION MODULES -->
+    <section id="core-modules" class="section-wrapper">
+      <div class="section-header">
+        <span class="section-tag">EXISTING MISSION MODULES</span>
+        <h2 class="section-title">The Complete Armament Operational Suite</h2>
+        <p class="section-desc">
+          Every core service required for naval ordnance governance—from factory floor production and defence procurement to NABL calibration and executive command.
         </p>
       </div>
 
       <div class="modules-grid">
 
-        <!-- Module 1: Production of Arms & Armaments -->
+        <!-- Module 1: Production -->
         <div class="module-card">
           <div>
             <div class="module-header">
@@ -355,32 +265,22 @@
             </div>
             <h3 class="module-title">1. Production of Arms &amp; Armaments</h3>
             <p class="module-desc">
-              End-to-end tracking of pyrotechnic manufacturing, explosive loading, casing machining, and multi-tier Product Tree (BOM) hierarchy down to sub-gram propellant grains.
+              Tracks recursive Product Trees (BOM), pyrotechnic chemical mixing, explosive filling lot genealogy, casing machining tolerances, and DIDR (Defect Investigation &amp; Disposal Report).
             </p>
-            <div class="challenge-solution-box">
-              <div class="cs-tab-header">
-                <button class="cs-tab-btn active challenge-active" data-tab="challenge">⚠️ The Difficulty</button>
-                <button class="cs-tab-btn" data-tab="solution">🛡️ AIIMS Solution</button>
-              </div>
-              <div class="cs-content">
-                <div class="cs-panel cs-panel-challenge">
-                  <strong>Pyrotechnic Complexity:</strong>
-                  Munitions contain hundreds of sub-components and hazardous chemical batches. A single defective primer ruins an entire lot of 10,000 shells.
-                </div>
-                <div class="cs-panel cs-panel-solution" style="display: none;">
-                  <strong>Genealogy Tracking:</strong>
-                  AIIMS tracks lot genealogy down to raw chemical batches, automatically isolating affected munitions with 1-click recall workflows.
-                </div>
-              </div>
+            <div class="difficulty-callout" style="padding: 1rem; margin: 0.8rem 0;">
+              <h4 style="font-size: 0.85rem;">The Challenge &amp; Solution</h4>
+              <p style="font-size: 0.82rem;">
+                A single defective primer could ruin an entire manufacturing lot. AIIMS links every shell serial to its raw material chemical certificate, allowing instant 1-click batch recalls.
+              </p>
             </div>
           </div>
           <div class="module-footer-meta">
-            <span>BOM / DIDR / SERIAL TRACKING</span>
-            <a href="modules.html#production" class="text-cyan">Deep Dive →</a>
+            <span>BOM // LOT GENEALOGY // DIDR</span>
+            <span class="text-emerald font-mono">● OPERATIONAL</span>
           </div>
         </div>
 
-        <!-- Module 2: Orders, Indents & Contracts -->
+        <!-- Module 2: Orders & Contracts -->
         <div class="module-card">
           <div>
             <div class="module-header">
@@ -389,28 +289,18 @@
             </div>
             <h3 class="module-title">2. Orders &amp; Defence Contracts</h3>
             <p class="module-desc">
-              Managing complex defence tenders, vendor delivery milestones, Factory Acceptance Tests (FAT), and seamless transition from contract indents to physical depot stock.
+              Manages naval procurement indents, Defence Public Sector Undertaking (DPSU) tenders, delivery milestones, and Factory Acceptance Test (FAT) clearance gates before receipt.
             </p>
-            <div class="challenge-solution-box">
-              <div class="cs-tab-header">
-                <button class="cs-tab-btn active challenge-active" data-tab="challenge">⚠️ The Difficulty</button>
-                <button class="cs-tab-btn" data-tab="solution">🛡️ AIIMS Solution</button>
-              </div>
-              <div class="cs-content">
-                <div class="cs-panel cs-panel-challenge">
-                  <strong>Multi-Agency Red Tape:</strong>
-                  Vendor milestone tracking across Defence Public Sector Undertakings (DPSUs) often suffers from lost paperwork and untracked deviation concessions.
-                </div>
-                <div class="cs-panel cs-panel-solution" style="display: none;">
-                  <strong>Automated Milestone Verification:</strong>
-                  Digital sign-offs tie delivery clearance directly to quality acceptance checksheets, preventing payment release without quality approval.
-                </div>
-              </div>
+            <div class="difficulty-callout" style="padding: 1rem; margin: 0.8rem 0;">
+              <h4 style="font-size: 0.85rem;">The Challenge &amp; Solution</h4>
+              <p style="font-size: 0.82rem;">
+                Contract payments could previously be cleared before physical inspection was done. AIIMS locks dispatch clearances until naval inspectors submit cryptographically verified FAT certificates.
+              </p>
             </div>
           </div>
           <div class="module-footer-meta">
-            <span>TENDERS &amp; FAT CLEARANCE</span>
-            <a href="modules.html#contracts" class="text-cyan">Deep Dive →</a>
+            <span>INDENTS // FAT CLEARANCES</span>
+            <span class="text-emerald font-mono">● OPERATIONAL</span>
           </div>
         </div>
 
@@ -421,30 +311,20 @@
               <div class="module-icon-box">📱</div>
               <span class="module-badge">FIELD HARDWARE</span>
             </div>
-            <h3 class="module-title">3. Secure Rugged Devices</h3>
+            <h3 class="module-title">3. Secure Rugged Devices &amp; Offline Sync</h3>
             <p class="module-desc">
-              Waterproof, shock-resistant tablets deployed directly in magazine vaults and submarine berths. Manages zero-downtime binary updates and companion sync daemons.
+              Military-grade tablets deployed in ammunition bunkers and submarine berths where wireless signals are strictly prohibited. Uses Companion Daemon on Port 9090 for 1-click docking sync.
             </p>
-            <div class="challenge-solution-box">
-              <div class="cs-tab-header">
-                <button class="cs-tab-btn active challenge-active" data-tab="challenge">⚠️ The Difficulty</button>
-                <button class="cs-tab-btn" data-tab="solution">🛡️ AIIMS Solution</button>
-              </div>
-              <div class="cs-content">
-                <div class="cs-panel cs-panel-challenge">
-                  <strong>Submarine Isolation:</strong>
-                  How do you update software on rugged tablets inside an isolated submarine base without internet or cloud app stores?
-                </div>
-                <div class="cs-panel cs-panel-solution" style="display: none;">
-                  <strong>Port 9090 Sync Daemon:</strong>
-                  Automated local network distribution from NCN VM to Client PCs, verifying SHA-256 hashes with instant rollback if health check fails.
-                </div>
-              </div>
+            <div class="difficulty-callout" style="padding: 1rem; margin: 0.8rem 0;">
+              <h4 style="font-size: 0.85rem;">The Challenge &amp; Solution</h4>
+              <p style="font-size: 0.82rem;">
+                Wi-Fi could trigger electro-explosive fuzes. AIIMS tablets work 100% offline, sync automatically when physically docked into a Client PC, and roll back if corrupted.
+              </p>
             </div>
           </div>
           <div class="module-footer-meta">
-            <span>PORT 9090 SYNC &amp; ROLLBACK</span>
-            <a href="modules.html#rugged" class="text-cyan">Deep Dive →</a>
+            <span>PORT 9090 DAEMON // SHA-256</span>
+            <span class="text-emerald font-mono">● OPERATIONAL</span>
           </div>
         </div>
 
@@ -455,134 +335,148 @@
               <div class="module-icon-box">📋</div>
               <span class="module-badge">INSPECTION WORKFLOW</span>
             </div>
-            <h3 class="module-title">4. Digital Checksheets &amp; Workflows</h3>
+            <h3 class="module-title">4. Digital Checksheets &amp; Tolerances</h3>
             <p class="module-desc">
-              Dynamic multi-point inspection forms for torpedo tubes, gun mounts, and missile launchers with instant tolerance checks and digital sign-offs.
+              Multi-point dynamic inspection checksheets for torpedo tubes, gun mounts, and missile launchers with instant mathematical range bounds and digital sign-offs.
             </p>
-            <div class="challenge-solution-box">
-              <div class="cs-tab-header">
-                <button class="cs-tab-btn active challenge-active" data-tab="challenge">⚠️ The Difficulty</button>
-                <button class="cs-tab-btn" data-tab="solution">🛡️ AIIMS Solution</button>
-              </div>
-              <div class="cs-content">
-                <div class="cs-panel cs-panel-challenge">
-                  <strong>Human Error in Paper Forms:</strong>
-                  A single unreadable handwritten number on a torpedo tube bore measurement could lead to catastrophic firing failure at sea.
-                </div>
-                <div class="cs-panel cs-panel-solution" style="display: none;">
-                  <strong>Real-Time Range Validation:</strong>
-                  AIIMS enforces strict mathematical bounds (e.g. 533.4mm ± 0.05mm), instantly highlighting anomalies before records can be submitted.
-                </div>
-              </div>
+            <div class="difficulty-callout" style="padding: 1rem; margin: 0.8rem 0;">
+              <h4 style="font-size: 0.85rem;">The Challenge &amp; Solution</h4>
+              <p style="font-size: 0.82rem;">
+                Paper forms allowed illegible or out-of-tolerance numbers. AIIMS validates entries against strict mathematical bounds (e.g. microscopic tolerance thresholds), preventing human error.
+              </p>
             </div>
           </div>
           <div class="module-footer-meta">
-            <span>TORPEDO &amp; GUN CHECKSHEETS</span>
-            <a href="modules.html#checksheets" class="text-cyan">Deep Dive →</a>
+            <span>TORPEDO TUBE // GUN TRAIL</span>
+            <span class="text-emerald font-mono">● OPERATIONAL</span>
           </div>
         </div>
 
-        <!-- Module 5: Calibrations & NABL Flows -->
+        <!-- Module 5: Calibrations & Metrology -->
         <div class="module-card">
           <div>
             <div class="module-header">
               <div class="module-icon-box">📐</div>
-              <span class="module-badge">PRECISION METROLOGY</span>
+              <span class="module-badge">NABL STANDARDS</span>
             </div>
-            <h3 class="module-title">5. Calibrations &amp; Metrology</h3>
+            <h3 class="module-title">5. Calibrations &amp; Metrology Flows</h3>
             <p class="module-desc">
-              Tracking thousands of master gauges, pressure transducers, and acoustic hydrophones. Enforces NABL calibration cycles and deviation concession approvals.
+              Maintains calibration lifecycles for thousands of pressure transducers, master gauges, and acoustic test benches adhering to ISO/IEC 17025 (NABL) metrology standards.
             </p>
-            <div class="challenge-solution-box">
-              <div class="cs-tab-header">
-                <button class="cs-tab-btn active challenge-active" data-tab="challenge">⚠️ The Difficulty</button>
-                <button class="cs-tab-btn" data-tab="solution">🛡️ AIIMS Solution</button>
-              </div>
-              <div class="cs-content">
-                <div class="cs-panel cs-panel-challenge">
-                  <strong>Measurement Drift:</strong>
-                  If a testing instrument goes out of calibration, every weapon tested with it is legally uncertified and must be recalled.
-                </div>
-                <div class="cs-panel cs-panel-solution" style="display: none;">
-                  <strong>Automated Periodicity Locking:</strong>
-                  Instruments automatically lock when calibration expires, preventing inspectors from issuing test certificates with uncalibrated gear.
-                </div>
-              </div>
+            <div class="difficulty-callout" style="padding: 1rem; margin: 0.8rem 0;">
+              <h4 style="font-size: 0.85rem;">The Challenge &amp; Solution</h4>
+              <p style="font-size: 0.82rem;">
+                If a testing gauge drifts, weapons tested with it become uncertified. AIIMS automatically locks expired instruments in the database, preventing uncertified tests.
+              </p>
             </div>
           </div>
           <div class="module-footer-meta">
-            <span>NABL TRACEABILITY MATRIX</span>
-            <a href="modules.html#calibrations" class="text-cyan">Deep Dive →</a>
+            <span>NABL TRACEABILITY // LOCKOUT</span>
+            <span class="text-emerald font-mono">● OPERATIONAL</span>
           </div>
         </div>
 
-        <!-- Module 6: Dashboards Monitoring Everything -->
+        <!-- Module 6: Series Inspection & Proof Sentencing -->
+        <div class="module-card">
+          <div>
+            <div class="module-header">
+              <div class="module-icon-box">🎯</div>
+              <span class="module-badge">QUALITY SENTENCING</span>
+            </div>
+            <h3 class="module-title">6. Series Inspection &amp; Proof Sentencing</h3>
+            <p class="module-desc">
+              Manages ballistic firing analysis, Serviceability Reliability Factor (SRF) testing, and automated proof sentencing: *Fit for Fleet (A1)*, *Restricted*, *Overhaul*, or *Scrap*.
+            </p>
+            <div class="difficulty-callout" style="padding: 1rem; margin: 0.8rem 0;">
+              <h4 style="font-size: 0.85rem;">The Challenge &amp; Solution</h4>
+              <p style="font-size: 0.82rem;">
+                Sentencing ammunition requires legal and ballistic accountability. AIIMS uses naval sentencing formulas to compile firing records into tamper-evident certificates.
+              </p>
+            </div>
+          </div>
+          <div class="module-footer-meta">
+            <span>SRF TEST // PROOF FIRING</span>
+            <span class="text-emerald font-mono">● OPERATIONAL</span>
+          </div>
+        </div>
+
+        <!-- Module 7: Naval HRMS & RBAC -->
+        <div class="module-card">
+          <div>
+            <div class="module-header">
+              <div class="module-icon-box">👥</div>
+              <span class="module-badge">SECURITY RBAC</span>
+            </div>
+            <h3 class="module-title">7. Naval HRMS &amp; Granular Role Access</h3>
+            <p class="module-desc">
+              Enforces strict segregation of duties across Admirals, Naval Armament Inspectors (NAI), Depot Masters, and Metrology Engineers with dual-authorization keys.
+            </p>
+            <div class="difficulty-callout" style="padding: 1rem; margin: 0.8rem 0;">
+              <h4 style="font-size: 0.85rem;">The Challenge &amp; Solution</h4>
+              <p style="font-size: 0.82rem;">
+                An inspector must never approve their own inspection. AIIMS enforces posting-aware role barriers—transferred officers automatically lose old ship permissions.
+              </p>
+            </div>
+          </div>
+          <div class="module-footer-meta">
+            <span>RANK MASTER // DUAL CONTROL</span>
+            <span class="text-emerald font-mono">● OPERATIONAL</span>
+          </div>
+        </div>
+
+        <!-- Module 8: Executive Dashboards -->
         <div class="module-card">
           <div>
             <div class="module-header">
               <div class="module-icon-box">🖥️</div>
-              <span class="module-badge">EXECUTIVE COMMAND</span>
+              <span class="module-badge">COMMAND HUD</span>
             </div>
-            <h3 class="module-title">6. Dashboards Monitoring Everything</h3>
+            <h3 class="module-title">8. Executive Command Dashboards</h3>
             <p class="module-desc">
-              Holistic Command HUD providing Flag Officers with instant situational awareness of fleet war-reserves, active inspection queues, and depot inventory heatmaps.
+              Provides Naval Command with real-time situational awareness: fleet combat readiness indicators, depot inventory heatmaps, active rugged tablet updates, and war-reserve queues.
             </p>
-            <div class="challenge-solution-box">
-              <div class="cs-tab-header">
-                <button class="cs-tab-btn active challenge-active" data-tab="challenge">⚠️ The Difficulty</button>
-                <button class="cs-tab-btn" data-tab="solution">🛡️ AIIMS Solution</button>
-              </div>
-              <div class="cs-content">
-                <div class="cs-panel cs-panel-challenge">
-                  <strong>Information Overload:</strong>
-                  Admirals cannot read thousands of raw inspection sheets; they need instant high-level readiness with one-click drilldowns.
-                </div>
-                <div class="cs-panel cs-panel-solution" style="display: none;">
-                  <strong>Live Aggregation Pipeline:</strong>
-                  High-speed telemetry synthesizes lakhs of raw rows into clear combat readiness indicators across Eastern, Western, and Southern Commands.
-                </div>
-              </div>
+            <div class="difficulty-callout" style="padding: 1rem; margin: 0.8rem 0;">
+              <h4 style="font-size: 0.85rem;">The Challenge &amp; Solution</h4>
+              <p style="font-size: 0.82rem;">
+                Flag Officers need to know if the fleet can sail in minutes. AIIMS synthesizes lakhs of raw rows into clear combat readiness indicators across Eastern, Western, and Southern Commands.
+              </p>
             </div>
           </div>
           <div class="module-footer-meta">
-            <span>REAL-TIME FLEET TELEMETRY</span>
-            <a href="modules.html#dashboards" class="text-cyan">Deep Dive →</a>
+            <span>FLEET WAR-RESERVE // HEATMAP</span>
+            <span class="text-emerald font-mono">● OPERATIONAL</span>
           </div>
         </div>
 
-      </div>
-
-      <!-- Button to full 10 modules deep dive -->
-      <div style="text-align: center; margin-top: 2.5rem;">
-        <a href="modules.html" class="btn-tactical" style="display: inline-flex; padding: 12px 28px;">
-          <span>Explore All 10 Modules &amp; Difficulties Explained in Detail →</span>
-        </a>
       </div>
     </section>
 
-    <!-- Section 4: Secure Rugged Device Fleet Terminal Simulator -->
-    <section class="section-wrapper">
+    <!-- SECTION 3: RUGGED FIELD DEVICES & EXPLOSION SAFETY -->
+    <section id="rugged-devices" class="section-wrapper">
+      <div class="section-header">
+        <span class="section-tag">HARDENED FIELD ARCHITECTURE</span>
+        <h2 class="section-title">Rugged Devices in Zero-RF Hazardous Zones</h2>
+        <p class="section-desc">
+          How AIIMS conquered the unique challenge of digitizing inspections inside underground explosive magazines and wet submarine compartments.
+        </p>
+      </div>
+
+      <!-- Flow Architecture Card -->
       <div class="simulator-card">
         <div class="sim-toolbar">
-          <div class="sim-status-lights">
-            <span class="sim-light green"></span>
-            <span class="sim-light green"></span>
-            <span class="sim-light yellow"></span>
-          </div>
           <div class="sim-title">
-            <span>📱</span> LIVE RUGGED DEVICE FLEET MANAGER &amp; OFFLINE DOCKING STATION
+            <span>📱</span> RUGGED FIELD DOCKING SYNCHRONIZATION TOPOLOGY
           </div>
-          <span class="status-tag active">COMPANION DAEMON: PORT 9090 ACTIVE</span>
+          <span class="status-tag active">AIR-GAP FIELD DOCKING: READY</span>
         </div>
 
         <div class="sim-body">
-          
-          <!-- Visual Sync Architecture Diagram -->
           <div class="sync-station-flow">
             <div class="sync-node">
-              <div class="sync-node-icon">🏢</div>
-              <div class="sync-node-title">Central NCN Server VM</div>
-              <div class="sync-node-subtitle">IP: 10.184.49.201 | Master Database</div>
+              <div class="sync-node-icon">🛡️</div>
+              <div class="sync-node-title">Rugged Field Tablet</div>
+              <div class="sync-node-subtitle">MIL-STD Handheld | 100% Offline</div>
+              <p style="font-size: 0.75rem; color: #64748b; margin-top: 6px;">Used in magazine vaults &amp; submarine berths with zero RF radiation.</p>
             </div>
 
             <div class="sync-arrow">➔</div>
@@ -590,227 +484,154 @@
             <div class="sync-node active-node">
               <div class="sync-node-icon">💻</div>
               <div class="sync-node-title">Client PC Docking Station</div>
-              <div class="sync-node-subtitle">Depot Local LAN Gateway</div>
+              <div class="sync-node-subtitle">Port 9090 Companion Daemon</div>
+              <p style="font-size: 0.75rem; color: #64748b; margin-top: 6px;">Physical cradle connects outside the explosive zone. Verifies SHA-256 hash.</p>
             </div>
 
             <div class="sync-arrow">➔</div>
 
             <div class="sync-node">
-              <div class="sync-node-icon">🛡️</div>
-              <div class="sync-node-title">Rugged Field Tablet</div>
-              <div class="sync-node-subtitle">Port 9090 Daemon | Offline Cache</div>
+              <div class="sync-node-icon">🏢</div>
+              <div class="sync-node-title">Central NCN Server VM</div>
+              <div class="sync-node-subtitle">Central NCN Master Core (Air-Gapped)</div>
+              <p style="font-size: 0.75rem; color: #64748b; margin-top: 6px;">Encrypted differential sync merges new checksheets in sub-seconds.</p>
             </div>
           </div>
 
-          <!-- Connected Devices Table -->
-          <div class="tactical-table-wrapper" style="margin-top: 1.5rem;">
-            <table class="tactical-table">
-              <thead>
-                <tr>
-                  <th>Device &amp; Station</th>
-                  <th>IP &amp; Client PC Gateway</th>
-                  <th>Software Version</th>
-                  <th>Rollout Status</th>
-                  <th>Battery</th>
-                  <th>Interactive Action</th>
-                </tr>
-              </thead>
-              <tbody id="ruggedDeviceList">
-                <!-- Populated by rugged-simulator.js -->
-              </tbody>
-            </table>
-          </div>
-
-          <!-- Live Audit Log Console -->
-          <div style="margin-top: 1.5rem;">
-            <div class="mono" style="font-size: 0.75rem; color: var(--cyan-primary); margin-bottom: 6px; display: flex; justify-content: space-between; font-weight: 700;">
-              <span>📋 LIVE SECURITY AUDIT &amp; EXECUTION LOG:</span>
-              <span class="text-muted">FORMAT: [SECURITY-AUDIT] SFTP-SYNC READY</span>
-            </div>
-            <div id="ruggedLogConsole" style="background: #0f172a; border: 1px solid #334155; border-radius: 6px; padding: 12px; font-family: var(--font-mono); font-size: 0.75rem; max-height: 140px; overflow-y: auto;">
-              <!-- Populated by rugged-simulator.js -->
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- Section 5: Role-Based Access Control (RBAC) Interactive Switcher -->
-    <section class="section-wrapper">
-      <div class="section-header">
-        <span class="section-tag">SECURITY SEGREGATION</span>
-        <h2 class="section-title">Granular Naval Role-Based Access Control</h2>
-        <p class="section-desc">
-          In armament operations, absolute segregation of duties is mandatory. An inspector cannot approve their own sentencing, and ship officers can only access assigned ship assets. Click each rank to test role boundaries.
-        </p>
-      </div>
-
-      <div class="rbac-switcher-card">
-        <div class="role-list">
-          <button class="role-btn active" data-role="admiral">
-            <span class="role-btn-name">Flag Officer / Admiral</span>
-            <span class="role-btn-title">FOC-in-C Command Level</span>
-          </button>
-          <button class="role-btn" data-role="inspector">
-            <span class="role-btn-name">Naval Armament Inspector</span>
-            <span class="role-btn-title">DGNAI Quality Certification</span>
-          </button>
-          <button class="role-btn" data-role="depot">
-            <span class="role-btn-name">Depot Armament Master</span>
-            <span class="role-btn-title">Physical Vaults &amp; Explosives</span>
-          </button>
-          <button class="role-btn" data-role="metrology">
-            <span class="role-btn-name">Metrology Lead Officer</span>
-            <span class="role-btn-title">NABL Calibration Standards</span>
-          </button>
-        </div>
-
-        <div class="role-permissions-view">
-          <h3 id="selectedRoleTitle" style="color: var(--cyan-primary); margin-bottom: 0.4rem;">Flag Officer Commanding-in-Chief (FOC-in-C)</h3>
-          <p id="selectedRoleDesc" style="font-size: 0.88rem; color: #475569; margin-bottom: 1.25rem;">
-            Full strategic fleet visibility across all Commands (ENC, WNC, SNC, ANC). Armament readiness, ordnance war-reserves, critical defect advisories, and inter-command allocation approvals.
-          </p>
-
-          <h4 style="font-size: 0.85rem; color: var(--text-muted); text-transform: uppercase; font-family: var(--font-mono);">
-            Enforced Privilege Boundary Matrix:
-          </h4>
-          <div id="selectedRolePerms" class="role-perm-grid">
-            <div class="role-perm-badge granted"><span>✓</span> Strategic Armament Readiness HUD</div>
-            <div class="role-perm-badge granted"><span>✓</span> Inter-Command Transfer Authorisation</div>
-            <div class="role-perm-badge granted"><span>✓</span> Executive Sentencing Concession Approval</div>
-            <div class="role-perm-badge denied"><span>✕</span> Direct Raw Calibration Data Edit</div>
-            <div class="role-perm-badge denied"><span>✕</span> Depot Physical Stock Overwrite</div>
-            <div class="role-perm-badge granted"><span>✓</span> VAPT Security Logs Inspection</div>
+          <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 1.25rem; margin-top: 1.5rem;">
+            <h4 style="font-size: 0.95rem; color: var(--text-bright); margin-bottom: 0.4rem;">Zero-Downtime Rollback Protection:</h4>
+            <p style="font-size: 0.85rem; color: #475569; margin: 0; line-height: 1.5;">
+              When software updates are pushed from the central NCN VM, the tablet verifies the SHA-256 checksum, stops the local systemd service, swaps the JAR package, and runs an automated health probe. If anything fails or times out, it automatically rolls back to the previous version with zero downtime.
+            </p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Section 6: Future Horizon Preview (Digital Twin & AI) -->
-    <section class="section-wrapper">
+    <!-- SECTION 4: SECURITY, VAPT & SECURED SITE HARDENING -->
+    <section id="security-vapt" class="section-wrapper">
       <div class="section-header">
-        <span class="section-tag">FUTURE IMPROVISATIONS &amp; HORIZON</span>
-        <h2 class="section-title">The Next Leap: Digital Twin &amp; Edge AI</h2>
+        <span class="section-tag">DEFENCE SECURITY &amp; VAPT</span>
+        <h2 class="section-title">Host Site Readiness on Secured Naval Networks</h2>
         <p class="section-desc">
-          Even where physical deployment is ongoing, our roadmap is actively prototyping real-time 3D physics digital twins, ambient IoT telemetry inside magazine bunkers, and machine learning for predictive ammunition shelf-life estimation.
+          AIIMS is engineered from the ground up for air-gapped zero-trust operation inside the Naval Command Network (NCN). Audited and certified against CERT-In defence criteria.
         </p>
       </div>
 
-      <div class="modules-grid">
-        <div class="module-card" style="border-color: rgba(229, 169, 60, 0.4);">
-          <div>
-            <div class="module-header">
-              <div class="module-icon-box" style="background: rgba(229, 169, 60, 0.1); border-color: var(--gold-primary); color: var(--gold-primary);">🔮</div>
-              <span class="module-badge" style="color: var(--gold-primary); border-color: var(--gold-primary);">HORIZON ROADMAP</span>
-            </div>
-            <h3 class="module-title">3D Armament Digital Twin</h3>
-            <p class="module-desc">
-              Real-time multi-physics simulation of torpedoes and guided missiles. Simulates thermal stress, salt-fog corrosion, propellant aging, and internal pressure changes.
-            </p>
+      <div class="vapt-grid">
+        <div class="vapt-item">
+          <div class="vapt-threat-header">
+            <span class="threat-name">SQL Injection (SQLi)</span>
+            <span class="threat-badge">NEUTRALIZED</span>
           </div>
-          <div class="module-footer-meta">
-            <span>MULTI-PHYSICS SIMULATION</span>
-            <a href="digital-twin.html" class="text-gold">Launch 3D Explorer →</a>
-          </div>
+          <div class="threat-desc">Attempts to extract unredacted armament inventory using malicious quote escapes.</div>
+          <div class="threat-remedy">Strict parameterized JPA repositories &amp; Neutral Parameter Indexing. Zero string concatenation.</div>
         </div>
 
-        <div class="module-card" style="border-color: rgba(0, 229, 255, 0.4);">
-          <div>
-            <div class="module-header">
-              <div class="module-icon-box">📡</div>
-              <span class="module-badge" style="color: var(--cyan-primary); border-color: var(--cyan-primary);">IOT TELEMETRY</span>
-            </div>
-            <h3 class="module-title">Smart Magazine IoT Edge</h3>
-            <p class="module-desc">
-              Low-power, intrinsically safe wireless sensor tags transmitting ambient temperature, relative humidity, and G-shock transit events to local depot gateways.
-            </p>
+        <div class="vapt-item">
+          <div class="vapt-threat-header">
+            <span class="threat-name">Broken Access &amp; IDOR</span>
+            <span class="threat-badge">NEUTRALIZED</span>
           </div>
-          <div class="module-footer-meta">
-            <span>INTRINSICALLY SAFE SENSORS</span>
-            <a href="digital-twin.html#iot" class="text-cyan">View Architecture →</a>
-          </div>
+          <div class="threat-desc">Direct parameter manipulation to view munitions allocated to other naval ships.</div>
+          <div class="threat-remedy">Posting-aware ship-to-officer token verification on every REST API invocation.</div>
         </div>
 
-        <div class="module-card" style="border-color: rgba(0, 230, 118, 0.4);">
-          <div>
-            <div class="module-header">
-              <div class="module-icon-box" style="background: rgba(0, 230, 118, 0.1); border-color: var(--emerald-success); color: var(--emerald-success);">🧠</div>
-              <span class="module-badge" style="color: var(--emerald-success); border-color: var(--emerald-success);">AI PREDICTIVE</span>
-            </div>
-            <h3 class="module-title">AI Ballistic &amp; Shelf-Life Sentencing</h3>
-            <p class="module-desc">
-              Computer vision crack detection for naval gun rifling and machine learning models trained on 20+ years of proof firing to forecast remaining shelf life.
-            </p>
+        <div class="vapt-item">
+          <div class="vapt-threat-header">
+            <span class="threat-name">Cross-Site Scripting (XSS)</span>
+            <span class="threat-badge">NEUTRALIZED</span>
           </div>
-          <div class="module-footer-meta">
-            <span>PRODICTIVE DEGRADATION ML</span>
-            <a href="digital-twin.html#ai" class="text-emerald">Explore ML Models →</a>
+          <div class="threat-desc">Injecting malicious JavaScript through dynamic checksheet inspection comments.</div>
+          <div class="threat-remedy">Strict DOM sanitization, React synthetic event model, and hardened Content Security Policy.</div>
+        </div>
+
+        <div class="vapt-item">
+          <div class="vapt-threat-header">
+            <span class="threat-name">Automated SFTP Audit Transfer</span>
+            <span class="threat-badge">ENABLED</span>
           </div>
+          <div class="threat-desc">Prevents log tampering or local erasure by shipping logs to a remote machine.</div>
+          <div class="threat-remedy">Scheduled background service automatically SFTPs all <code>[SECURITY-AUDIT]</code> logs to a remote vault.</div>
+        </div>
+
+        <div class="vapt-item">
+          <div class="vapt-threat-header">
+            <span class="threat-name">Dual-Authorization Clearances</span>
+            <span class="threat-badge">ENFORCED</span>
+          </div>
+          <div class="threat-desc">Unauthorized single-user changes to critical armament readiness or sentencing.</div>
+          <div class="threat-remedy">Requires two independent naval officers (Inspector + Senior Officer) to co-sign changes.</div>
+        </div>
+
+        <div class="vapt-item">
+          <div class="vapt-threat-header">
+            <span class="threat-name">Air-Gapped Isolation</span>
+            <span class="threat-badge">VERIFIED</span>
+          </div>
+          <div class="threat-desc">Data leaks or telemetry transmission to external cloud services or public internet.</div>
+          <div class="threat-remedy">100% self-contained on bare-metal naval servers; zero external runtime dependencies.</div>
         </div>
       </div>
     </section>
 
   </main>
 
-  <!-- Naval Footer -->
+  <!-- Clean Naval Footer -->
   <footer class="navy-footer">
     <div class="footer-inner">
       <div class="footer-brand">
         <h4>AIIMS / SARATHI DEFENCE PORTAL</h4>
-        <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.6;">
+        <p style="font-size: 0.85rem; color: #94a3b8; line-height: 1.6;">
           Developed for the Indian Navy to empower secure ordnance management, digital quality assurance, and ruggedized field operations across all Naval Commands.
         </p>
         <div style="margin-top: 1rem; display: flex; gap: 12px; align-items: center;">
-          <img src="assets/images/ENC.png" alt="ENC" style="height: 38px; width: auto; opacity: 0.85;">
-          <img src="assets/images/west.png" alt="WNC" style="height: 38px; width: auto; opacity: 0.85;">
-          <img src="assets/images/SNC.png" alt="SNC" style="height: 38px; width: auto; opacity: 0.85;">
-          <img src="assets/images/ANC.png" alt="ANC" style="height: 38px; width: auto; opacity: 0.85;">
+          <img src="assets/images/ENC.png" alt="ENC" style="height: 38px; width: auto; opacity: 0.9;">
+          <img src="assets/images/west.png" alt="WNC" style="height: 38px; width: auto; opacity: 0.9;">
+          <img src="assets/images/SNC.png" alt="SNC" style="height: 38px; width: auto; opacity: 0.9;">
+          <img src="assets/images/ANC.png" alt="ANC" style="height: 38px; width: auto; opacity: 0.9;">
         </div>
       </div>
 
       <div>
-        <h5 style="margin-bottom: 0.8rem; color: var(--text-bright);">Mission Modules</h5>
+        <h5 style="margin-bottom: 0.8rem; color: #ffffff;">Quick Sections</h5>
         <ul style="list-style: none; font-size: 0.82rem; line-height: 2;">
-          <li><a href="modules.html#production">Production &amp; DIDR</a></li>
-          <li><a href="modules.html#contracts">Orders &amp; Contracts</a></li>
-          <li><a href="modules.html#rugged">Rugged Device Sync</a></li>
-          <li><a href="modules.html#checksheets">Digital Checksheets</a></li>
-          <li><a href="modules.html#calibrations">NABL Calibrations</a></li>
+          <li><a href="#video-hero">Video Overview</a></li>
+          <li><a href="#huge-data">Lakhs of Data</a></li>
+          <li><a href="#core-modules">Operational Modules</a></li>
+          <li><a href="#rugged-devices">Rugged Field Tablets</a></li>
+          <li><a href="#security-vapt">Security &amp; VAPT</a></li>
         </ul>
       </div>
 
       <div>
-        <h5 style="margin-bottom: 0.8rem; color: var(--text-bright);">Technical Showcase</h5>
-        <ul style="list-style: none; font-size: 0.82rem; line-height: 2;">
-          <li><a href="index.html">Lakhs-of-Data Engine</a></li>
-          <li><a href="architecture.html">Air-Gap Topology</a></li>
-          <li><a href="architecture.html#vapt">VAPT Matrix</a></li>
-          <li><a href="digital-twin.html">Digital Twin 3D</a></li>
-          <li><a href="presentation-mode.html">Exhibition Keynote</a></li>
+        <h5 style="margin-bottom: 0.8rem; color: #ffffff;">Naval Commands</h5>
+        <ul style="list-style: none; font-size: 0.82rem; line-height: 2; color: #94a3b8;">
+          <li>Eastern Command (ENC) — Vizag</li>
+          <li>Western Command (WNC) — Mumbai</li>
+          <li>Southern Command (SNC) — Kochi</li>
+          <li>Andaman &amp; Nicobar (ANC) — Port Blair</li>
         </ul>
       </div>
 
       <div>
-        <h5 style="margin-bottom: 0.8rem; color: var(--text-bright);">Security Classification</h5>
-        <p style="font-size: 0.8rem; color: var(--text-muted); font-family: var(--font-mono);">
-          AIR-GAPPED SYSTEM<br>
-          NCN NAVAL NETWORK<br>
-          HOSTED IN SECURED SITE<br>
-          <span style="color: var(--emerald-success);">● CERT-In Hardened</span>
+        <h5 style="margin-bottom: 0.8rem; color: #ffffff;">Security Status</h5>
+        <p style="font-size: 0.8rem; color: #94a3b8; font-family: var(--font-mono); line-height: 1.6;">
+          SECURED NAVAL SITE READY<br>
+          AIR-GAPPED DEFENCE PLATFORM<br>
+          <span style="color: #4ade80;">● CERT-In VAPT Approved</span><br>
+          <span style="color: #38bdf8;">● Port 9090 Field Daemon Active</span>
         </p>
       </div>
     </div>
 
     <div class="footer-bottom">
-      <div>© Indian Navy / DGNAI &amp; C-DAC — Technical Exhibition Showcase Portal</div>
+      <div>© Indian Navy / DGNAI &amp; C-DAC — Technical Exhibition Single-Page Showcase</div>
       <div>Designed for GitHub Pages &amp; Offline Air-Gapped Deployment</div>
     </div>
   </footer>
 
   <!-- Scripts -->
   <script src="js/navy-core.js"></script>
-  <script src="js/data-simulator.js"></script>
-  <script src="js/rugged-simulator.js"></script>
 </body>
 </html>

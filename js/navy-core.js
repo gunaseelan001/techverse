@@ -1,5 +1,5 @@
 /**
- * navy-core.js - Tactical Naval UI Controller & Audio Synthesis
+ * navy-core.js - Single Page Tactical Naval UI Controller & Video Integration
  */
 
 class TacticalAudio {
@@ -50,9 +50,9 @@ class TacticalAudio {
       const osc = this.ctx.createOscillator();
       const gain = this.ctx.createGain();
       osc.type = 'sine';
-      osc.frequency.setValueAtTime(1400, this.ctx.currentTime);
+      osc.frequency.setValueAtTime(1200, this.ctx.currentTime);
       osc.frequency.exponentialRampToValueAtTime(400, this.ctx.currentTime + 0.5);
-      gain.gain.setValueAtTime(0.12, this.ctx.currentTime);
+      gain.gain.setValueAtTime(0.1, this.ctx.currentTime);
       gain.gain.exponentialRampToValueAtTime(0.001, this.ctx.currentTime + 0.6);
       osc.connect(gain);
       gain.connect(this.ctx.destination);
@@ -74,10 +74,9 @@ function animateCounters() {
     const prefix = counter.getAttribute('data-prefix') || '';
     const suffix = counter.getAttribute('data-suffix') || '';
     let count = 0;
-    const speed = 2000 / target;
 
     const updateCount = () => {
-      const increment = Math.ceil(target / 60);
+      const increment = Math.ceil(target / 50);
       count += increment;
       if (count < target) {
         counter.innerText = prefix + count.toLocaleString('en-IN') + suffix;
@@ -92,20 +91,80 @@ function animateCounters() {
 
 // Global initialization
 document.addEventListener('DOMContentLoaded', () => {
-  // Audio toggle button
+  // Video element setup
+  const video = document.getElementById('heroVideo');
+  const videoPicker = document.getElementById('localVideoPicker');
+  const chooseVideoBtn = document.getElementById('chooseVideoBtn');
+  const videoAudioBtn = document.getElementById('videoAudioBtn');
+  const videoStatusBadge = document.getElementById('videoStatusBadge');
+
+  if (video) {
+    // Attempt autoplay immediately
+    video.play().catch(() => {
+      console.log('Autoplay deferred or muted by browser policy.');
+    });
+
+    // Unmute / Mute button
+    if (videoAudioBtn) {
+      videoAudioBtn.addEventListener('click', () => {
+        video.muted = !video.muted;
+        videoAudioBtn.innerText = video.muted ? '🔇 Unmute Video' : '🔊 Mute Video';
+        if (window.tacticalAudio) window.tacticalAudio.playBeep(700, 'sine', 0.05);
+      });
+    }
+
+    // Local file selector for video
+    if (chooseVideoBtn && videoPicker) {
+      chooseVideoBtn.addEventListener('click', () => {
+        videoPicker.click();
+      });
+
+      videoPicker.addEventListener('change', (e) => {
+        const file = e.target.files[0];
+        if (file) {
+          const fileURL = URL.createObjectURL(file);
+          video.src = fileURL;
+          video.play().catch(err => console.warn(err));
+          if (videoStatusBadge) {
+            videoStatusBadge.innerText = `PLAYING LOCAL: ${file.name}`;
+            videoStatusBadge.classList.remove('warning');
+            videoStatusBadge.classList.add('active');
+          }
+          if (window.tacticalAudio) window.tacticalAudio.playSonar();
+        }
+      });
+    }
+  }
+
+  // Tactical Audio toggle button in header
   const audioBtn = document.getElementById('audioToggleBtn');
   if (audioBtn) {
     audioBtn.addEventListener('click', () => {
       const isEnabled = window.tacticalAudio.toggle();
       audioBtn.innerHTML = isEnabled 
-        ? '<span title="Mute Tactical Audio">🔊</span>' 
-        : '<span title="Enable Tactical Audio">🔇</span>';
-      audioBtn.style.borderColor = isEnabled ? 'var(--cyan-primary)' : 'rgba(0, 229, 255, 0.3)';
+        ? '<span title="Mute Tactical Audio">🔊 Audio ON</span>' 
+        : '<span title="Enable Tactical Audio">🔇 Audio</span>';
+      audioBtn.style.borderColor = isEnabled ? 'var(--cyan-primary)' : 'rgba(0, 98, 204, 0.25)';
       if (isEnabled) {
         window.tacticalAudio.playSonar();
       }
     });
   }
+
+  // Smooth scroll for nav anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const targetId = this.getAttribute('href');
+      if (targetId && targetId !== '#') {
+        const targetEl = document.querySelector(targetId);
+        if (targetEl) {
+          e.preventDefault();
+          targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          if (window.tacticalAudio) window.tacticalAudio.playBeep(850, 'sine', 0.04);
+        }
+      }
+    });
+  });
 
   // Interactive Tab Toggle for Challenge vs Solution in Module Cards
   document.addEventListener('click', (e) => {
@@ -134,91 +193,11 @@ document.addEventListener('DOMContentLoaded', () => {
         activePanel.style.display = 'block';
       }
 
-      window.tacticalAudio.playBeep(650, 'triangle', 0.05);
+      if (window.tacticalAudio) {
+        window.tacticalAudio.playBeep(650, 'triangle', 0.05);
+      }
     }
   });
-
-  // Role Access Switcher Demo
-  const roleButtons = document.querySelectorAll('.role-btn');
-  if (roleButtons.length > 0) {
-    const roleDetails = {
-      admiral: {
-        title: "Flag Officer Commanding-in-Chief (FOC-in-C)",
-        desc: "Full strategic fleet visibility across all Commands (ENC, WNC, SNC, ANC). Armament readiness, ordnance war-reserves, critical defect advisories, and inter-command allocation approvals.",
-        perms: [
-          { name: "Strategic Armament Readiness HUD", granted: true },
-          { name: "Inter-Command Transfer Authorisation", granted: true },
-          { name: "Executive Sentencing Concession Approval", granted: true },
-          { name: "Direct Raw Calibration Data Edit", granted: false },
-          { name: "Depot Physical Stock Overwrite", granted: false },
-          { name: "VAPT Security Logs Inspection", granted: true }
-        ]
-      },
-      inspector: {
-        title: "Naval Armament Inspector (NAI)",
-        desc: "Autonomous verification of munitions, torpedo tube tolerances, proof firing analysis, and technical sentencing (Fit / Restricted / Overhaul / Scrap). Strict segregation prevents self-approvals.",
-        perms: [
-          { name: "Digital Checksheet Fill & Submit", granted: true },
-          { name: "Rugged Tablet Offline Sync Execution", granted: true },
-          { name: "SRF Proof Firing Report Generation", granted: true },
-          { name: "Self-Approval of Own Inspection", granted: false },
-          { name: "Contract Pricing Modification", granted: false },
-          { name: "Calibration Deviation Flagging", granted: true }
-        ]
-      },
-      depot: {
-        title: "Naval Armament Depot Manager (NADM)",
-        desc: "Oversees physical receipt, pyrotechnic explosive loading, temperature-controlled magazine storage, DIDR tracking, and order delivery milestones.",
-        perms: [
-          { name: "Lot Batch Receipt & Inventory Inward", granted: true },
-          { name: "Underground Magazine Heatmap Telemetry", granted: true },
-          { name: "Rugged Device Docking Station Dispatch", granted: true },
-          { name: "Inspection Sentencing Override", granted: false },
-          { name: "Master Calibration Stamp Issue", granted: false },
-          { name: "Material Indent Creation", granted: true }
-        ]
-      },
-      metrology: {
-        title: "Calibration & Metrology Lead Officer",
-        desc: "Ensures NABL-accredited precision for thousands of pressure transducers, master micrometers, and test benches. Controls master calibration stamps.",
-        perms: [
-          { name: "Master Gauge Calibration Certificate Entry", granted: true },
-          { name: "Periodicity Drift Tolerance Recalibration", granted: true },
-          { name: "Instrument Quarantining & De-commission", granted: true },
-          { name: "Armament Firing Clearance Authorisation", granted: false },
-          { name: "HRMS Posting Re-assignment", granted: false },
-          { name: "NABL Metrology Audit Export", granted: true }
-        ]
-      }
-    };
-
-    roleButtons.forEach(btn => {
-      btn.addEventListener('click', () => {
-        roleButtons.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        const roleKey = btn.getAttribute('data-role');
-        const data = roleDetails[roleKey];
-        if (!data) return;
-
-        const titleEl = document.getElementById('selectedRoleTitle');
-        const descEl = document.getElementById('selectedRoleDesc');
-        const permGrid = document.getElementById('selectedRolePerms');
-
-        if (titleEl) titleEl.innerText = data.title;
-        if (descEl) descEl.innerText = data.desc;
-        if (permGrid) {
-          permGrid.innerHTML = data.perms.map(p => `
-            <div class="role-perm-badge ${p.granted ? 'granted' : 'denied'}">
-              <span>${p.granted ? '✓' : '✕'}</span>
-              <span>${p.name}</span>
-            </div>
-          `).join('');
-        }
-
-        window.tacticalAudio.playBeep(720, 'sine', 0.06);
-      });
-    });
-  }
 
   // Trigger counters when scrolled into view
   const observer = new IntersectionObserver((entries) => {
