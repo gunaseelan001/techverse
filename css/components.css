@@ -1163,11 +1163,11 @@
     border-radius: 8px !important;
   }
 
-  /* On mobile: 2-Item Stat Strip layout */
+  /* On mobile: 2-Item Stat Strip layout - SIDE BY SIDE */
   .hero-stats-strip {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 0.75rem !important;
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 8px !important;
     margin-top: 0.75rem !important;
     padding-top: 0.75rem !important;
     border-top: 1px solid var(--navy-card-border) !important;
@@ -1178,28 +1178,46 @@
     background: #ffffff !important;
     border: 1px solid var(--navy-card-border) !important;
     border-radius: 8px !important;
-    padding: 0.85rem 1.05rem !important;
+    padding: 0.65rem 0.65rem !important;
     width: 100% !important;
+    min-width: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
   }
 
   .stat-item-assets {
-    border-left: 4px solid #b37d14 !important;
+    border-left: 3px solid #b37d14 !important;
   }
 
   .stat-item-concurrency {
-    border-left: 4px solid #0062cc !important;
+    border-left: 3px solid #0062cc !important;
   }
 
   .stat-number {
-    font-size: 1.85rem !important;
+    font-size: clamp(1.2rem, 4.5vw, 1.45rem) !important;
+    line-height: 1.15 !important;
+    flex-wrap: wrap !important;
+    gap: 3px !important;
+  }
+
+  .stat-number.text-cyan span.unit {
+    font-size: 0.66rem !important;
+    padding: 1px 5px !important;
+    margin-left: 2px !important;
   }
 
   .stat-label {
-    font-size: 0.8rem !important;
+    font-size: 0.68rem !important;
+    line-height: 1.25 !important;
+    margin-top: 4px !important;
   }
 
   .stat-subtext {
-    font-size: 0.74rem !important;
+    font-size: 0.62rem !important;
+    line-height: 1.3 !important;
+    margin-top: 3px !important;
+    color: #64748b !important;
   }
 
   /* On mobile: The 9 modules MUST be placed strictly one below the other */
