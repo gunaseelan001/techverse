@@ -24,6 +24,9 @@ const MIME_TYPES = {
 
 const server = http.createServer((req, res) => {
   let cleanUrl = req.url.split('?')[0];
+  try {
+    cleanUrl = decodeURIComponent(cleanUrl);
+  } catch (e) {}
   if (cleanUrl === '/' || cleanUrl === '') {
     cleanUrl = '/index.html';
   }
@@ -68,7 +71,10 @@ const server = http.createServer((req, res) => {
       'Content-Length': stats.size,
       'Content-Type': contentType,
       'Accept-Ranges': 'bytes',
-      'Access-Control-Allow-Origin': '*'
+      'Access-Control-Allow-Origin': '*',
+      'Cache-Control': 'no-cache, no-store, must-revalidate',
+      'Pragma': 'no-cache',
+      'Expires': '0'
     });
 
     const stream = fs.createReadStream(filePath);
