@@ -1022,3 +1022,58 @@
     margin: 2px 0;
   }
 }
+
+@media (max-width: 768px) {
+  /* On mobile: Video has ZERO black background on top or bottom */
+  .video-showcase-card {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: 0 4px 16px rgba(15, 23, 42, 0.08) !important;
+    margin: 0.15rem auto 0.75rem !important;
+    border-radius: 8px !important;
+    width: 100% !important;
+    overflow: hidden !important;
+  }
+
+  .video-showcase-header {
+    display: none !important; /* Hide header bar on mobile so no black background above video */
+  }
+
+  .video-player-wrapper {
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    aspect-ratio: 16/9 !important;
+    background: transparent !important;
+    display: block !important;
+    overflow: hidden !important;
+    border-radius: 8px !important;
+  }
+
+  .main-video-element {
+    width: 100% !important;
+    height: 100% !important;
+    aspect-ratio: 16/9 !important;
+    object-fit: cover !important;
+    display: block !important;
+    border-radius: 8px !important;
+  }
+
+  /* On mobile: The 9 modules MUST be placed strictly one below the other */
+  .modules-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1.25rem !important;
+    margin-top: 1.25rem !important;
+    width: 100% !important;
+  }
+
+  .module-card {
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    padding: 1.35rem 1.15rem !important;
+    border-radius: 10px !important;
+  }
+}

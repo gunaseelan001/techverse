@@ -805,29 +805,40 @@ a:hover {
     overflow: visible;
   }
 
-  /* Video player card fills front page prominently */
+  /* On mobile: Video has ZERO black background on top or bottom */
   .video-showcase-card {
-    margin: 0.15rem 0 0.85rem;
-    border-radius: 8px;
-    width: 100%;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: 0 4px 16px rgba(15, 23, 42, 0.08) !important;
+    margin: 0.15rem auto 0.75rem !important;
+    border-radius: 8px !important;
+    width: 100% !important;
+    overflow: hidden !important;
   }
 
   .video-showcase-header {
-    padding: 3px 8px;
-    font-size: 0.68rem;
-    height: 24px;
+    display: none !important; /* Hide dark header bar on mobile so no black background above video */
   }
 
   .video-player-wrapper {
-    height: min(65vh, 460px);
-    min-height: 260px;
-    max-height: 72vh;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    aspect-ratio: 16/9 !important;
+    background: transparent !important;
+    display: block !important;
+    overflow: hidden !important;
+    border-radius: 8px !important;
   }
 
   .main-video-element {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
+    width: 100% !important;
+    height: 100% !important;
+    aspect-ratio: 16/9 !important;
+    object-fit: cover !important;
+    display: block !important;
+    border-radius: 8px !important;
   }
 
   .video-action-bar {
@@ -872,15 +883,21 @@ a:hover {
     font-size: 1.35rem;
   }
 
+  /* On mobile: The 9 modules MUST be placed strictly one below the other */
   .modules-grid {
-    grid-template-columns: 1fr;
-    gap: 1.15rem;
-    margin-top: 1.25rem;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1.25rem !important;
+    margin-top: 1.25rem !important;
+    width: 100% !important;
   }
 
   .module-card {
-    padding: 1.35rem 1.15rem;
-    border-radius: 10px;
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    padding: 1.35rem 1.15rem !important;
+    border-radius: 10px !important;
   }
 
   .module-header {
