@@ -11,8 +11,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&family=Rajdhani:wght@600;700;800&display=swap" rel="stylesheet">
   
   <!-- Stylesheets -->
-  <link rel="stylesheet" href="css/navy-core.css">
-  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/navy-core.css?v=2.5">
+  <link rel="stylesheet" href="css/components.css?v=2.5">
   <link rel="icon" type="image/svg+xml" href="assets/images/SARATHI Logo Option 3.4.png">
 </head>
 <body>
@@ -110,9 +110,9 @@
         </div> -->
       </div>
 
-      <!-- Key Quantitative Scale Highlights: 2-Item Stat Strip -->
-      <div class="hero-stats-strip" style="margin-top: 1.25rem;">
-        <div class="stat-item stat-item-assets">
+      <!-- Key Quantitative Scale Highlights: 2-Item Stat Strip (Always Side-by-Side) -->
+      <div class="hero-stats-strip" style="display: grid !important; grid-template-columns: 1fr 1fr !important; gap: 8px !important; margin-top: 1rem !important; width: 100% !important;">
+        <div class="stat-item stat-item-assets" style="min-width: 0 !important; width: 100% !important;">
           <div class="stat-number text-gold">
             Lakhs<span class="unit">+</span>
           </div>
@@ -120,7 +120,7 @@
           <div class="stat-subtext">Active lifecycle governance across nationwide depots &amp; fleet magazines</div>
         </div>
 
-        <div class="stat-item stat-item-concurrency">
+        <div class="stat-item stat-item-concurrency" style="min-width: 0 !important; width: 100% !important;">
           <div class="stat-number text-cyan">
             750 – 800<span class="unit">Users</span>
           </div>
