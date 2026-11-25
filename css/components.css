@@ -1127,6 +1127,55 @@
 }
 
 @media (max-width: 768px) {
+  /* Mobile Header Brand Name Full Visibility */
+  .navy-navbar {
+    height: auto !important;
+    min-height: 42px !important;
+    padding: 2px 0.5rem !important;
+  }
+
+  .nav-container {
+    height: auto !important;
+    min-height: 42px !important;
+    padding: 2px 0 !important;
+  }
+
+  .nav-brand {
+    max-width: calc(100% - 42px) !important;
+    gap: 8px !important;
+    flex: 1 !important;
+    display: flex !important;
+    align-items: center !important;
+  }
+
+  .nav-brand img.naval-insignia {
+    height: 34px !important;
+    max-width: 60px !important;
+    width: auto !important;
+    flex-shrink: 0 !important;
+  }
+
+  .brand-text-block {
+    white-space: normal !important;
+    overflow: visible !important;
+    text-overflow: clip !important;
+    flex: 1 !important;
+    min-width: 0 !important;
+  }
+
+  .brand-sub {
+    font-family: var(--font-sans) !important;
+    font-size: clamp(0.55rem, 2.5vw, 0.68rem) !important;
+    white-space: normal !important;
+    overflow: visible !important;
+    text-overflow: clip !important;
+    line-height: 1.25 !important;
+    font-weight: 700 !important;
+    display: block !important;
+    text-transform: uppercase !important;
+    color: var(--cyan-primary) !important;
+  }
+
   /* On mobile: Video has ZERO black background on top or bottom */
   .video-showcase-card {
     background: transparent !important;

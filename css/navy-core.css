@@ -724,38 +724,60 @@ a:hover {
     overflow-x: hidden;
   }
 
-  /* Single-line sleek header on mobile */
+  /* Header on mobile - Full name visibility */
   .navy-navbar {
-    padding: 0 0.5rem;
-    height: 38px;
+    padding: 2px 0.5rem;
+    height: auto;
+    min-height: 42px;
   }
 
   .nav-container {
-    height: 38px;
+    height: auto;
+    min-height: 42px;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    padding: 0;
+    padding: 2px 0;
     gap: 6px;
   }
 
   .nav-brand {
-    gap: 5px;
-    flex-shrink: 1;
+    gap: 8px;
+    flex: 1;
     min-width: 0;
-    max-width: calc(100% - 76px);
+    max-width: calc(100% - 42px);
+    display: flex;
+    align-items: center;
   }
 
   .nav-brand img.naval-insignia {
-    height: 42px;
-    max-width: 120px;
+    height: 34px;
+    width: auto;
+    max-width: 60px;
+    flex-shrink: 0;
+    object-fit: contain;
+  }
+
+  .brand-text-block {
+    white-space: normal !important;
+    overflow: visible !important;
+    text-overflow: clip !important;
+    flex: 1;
+    min-width: 0;
   }
 
   .brand-sub {
-    font-size: clamp(0.52rem, 2.3vw, 0.66rem);
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    font-family: var(--font-sans);
+    font-size: clamp(0.55rem, 2.5vw, 0.68rem);
+    white-space: normal;
+    overflow: visible;
+    text-overflow: clip;
+    line-height: 1.25;
+    font-weight: 700;
+    letter-spacing: 0.1px;
+    display: block;
+    text-transform: uppercase;
+    color: var(--cyan-primary);
   }
 
   .nav-actions {
